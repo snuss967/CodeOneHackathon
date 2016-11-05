@@ -34,7 +34,7 @@ function drawInvestmentSummaryPieChart() {
 	data.addColumn('number', 'Total Value');
 
 	//TODO Hard code for now
-	var profile = Profiles.findOne({name: "Matthew"});
+	var profile = Profiles.findOne({name: "Matthew"})
 
 	for(var i = 0; i < profile.investments.length; i++) {
 		var row = [];
@@ -105,7 +105,7 @@ Template.financialSummary.helpers({
 			totalValue += profile.investments[i].values[profile.investments[i].values.length - 1];
 		}
 		
-		return totalValue;
+		return totalValue.toLocaleString();
 	},
 	todaysChange: function() {
 		var profile = Profiles.findOne({name: "Matthew"});
@@ -119,10 +119,10 @@ Template.financialSummary.helpers({
 	
 		var percent = totalValueToday / totalValueYesterday;
 		if(percent < 1.0) {
-			percent = -1 / percent;
+			percent = (-1 / percent).toFixed(2);
 		}
 		
-		return percent;
+		return percent.toFixed(2);
 	}
 });
 

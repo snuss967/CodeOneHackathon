@@ -1,12 +1,12 @@
 	google.charts.load('current', {'packages':['corechart']});
     google.charts.setOnLoadCallback(drawCharts);
-	
+
 	//Draws all the charts to the screen
     function drawCharts() {
 		drawInvestmentSummaryPieChart();
 		drawInvestmentChangeLineChart();
     }
-	  
+
 	function drawInvestmentSummaryPieChart() {
 		var data = google.visualization.arrayToDataTable([
 			['Investment', 'Total Value'],
@@ -18,7 +18,7 @@
         ]);
 
         var options = {
-			title: 'My Investments', 
+			title: 'My Investments',
 			legend: { position: 'right' }
         };
 
@@ -26,7 +26,7 @@
 
         chart.draw(data, options);
 	  }
-	  
+
 	  function drawInvestmentChangeLineChart() {
 		var data = google.visualization.arrayToDataTable([
 			['Month', 'Expected', 'Realized'],
@@ -54,4 +54,10 @@
 
         chart.draw(data, options);
 	  }
-	  
+
+	  $(document).ready(function() {
+	  	$(".total-value, .change").css({
+	  		"transition-duration" : "0.85s",
+	  		"top": "320px"
+	  	});
+	  });

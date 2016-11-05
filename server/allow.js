@@ -7,25 +7,25 @@ export function allowAll() {
 
 	Profiles.allow({
 		'insert': function(userId, doc) {
-			return false;
+			return true;
 		},
 		'update': function(userId, doc) {
-			return false;
+			return true;
 		},
 		'remove': function(userId, doc) {
-			return false;
+			return true;
 		}
 	});
 
 	Investments.allow({
 		'insert': function(userId, doc) {
-			return false;
+			return true;
 		},
 		'update': function(userId, doc) {
-			return false;
+			return true;
 		},
 		'remove': function(userId, doc) {
-			return false;
+			return true;
 		}
 	});
 

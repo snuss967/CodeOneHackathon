@@ -18,8 +18,9 @@
         ]);
 
         var options = {
-			title: 'My Investments',
-			legend: { position: 'right' }
+			legend: { position: 'right' },
+			colors: [ '#00b2a9', '#d7c826', '#007396', '#ffaa4d', '#7c2529', '#f3dd6d' ],
+			backgroundColor: { fill:'transparent' }
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('investmentSummaryPieChart'));
@@ -46,8 +47,8 @@
         ]);
 
         var options = {
-			title: 'Investment Change',
-			legend: { position: 'right' }
+			legend: { position: 'left' },
+			backgroundColor: { fill:'transparent' }
         };
 
         var chart = new google.visualization.LineChart(document.getElementById('investmentChangeLineChart'));
@@ -55,3 +56,15 @@
         chart.draw(data, options);
 	  }
 
+	  $(document).ready(function() {
+		  setTimeout(function() {
+				$(".total-value, .change").css({
+					"transition-duration": "1.2s",
+					"top": "320px"
+				});
+				$(".chart").hide().fadeIn(1500);
+				$(".total-value, .change").css({
+					"transition-duration": "0s"
+				});
+			}, 50);
+	  });

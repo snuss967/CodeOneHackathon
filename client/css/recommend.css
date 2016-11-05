@@ -24,10 +24,10 @@ body {
 }
 
 #menuBar1 {
-	top: 450px;
+	top: 350px;
 }
 #menuBar2 {
-	top: 300px;
+	top: 250px;
 }
 .total-value {
 	left: 13%;
@@ -47,15 +47,16 @@ body {
 }
 
 #subtitle1 {
-	top: 500px;
+	top: 390px;
 }
 #subtitle2 {
-	top: 350px;
+	top: 290px;
 }
 
 .results {
 	position: absolute;
-	text-align: center;
+	text-align: left;
+	margin-left: 40px;	
 	height: 25px;
 	width: 100%;
 	
@@ -63,17 +64,28 @@ body {
 
 #resultsHeader {
 	font-family: 'Avenir Next Pro Bold';
-	top: 570px;
+	top: 460px;
 	font-size: 40px;
 }
 #resultsSubtext {
 	font-family: 'Avenir Next Pro';
 	font-size: 30px;
-	top: 630px;
+	top: 530px;
 }
 
 .chart {
 	width: 49%;
 	height: 500px;
 	display: inline-block;
+}
+.charts-container-recommend {
+	position: absolute;
+	height: 500px;
+	width: 40%;
+	top: 450px;
+	left: 65%;
+	margin-right: -50%;
+	transform: translateX(-50%);
+	background-color: white;
+	box-shadow: 0 0 32px 0 rgba(0, 0, 0, 0.7);
 }

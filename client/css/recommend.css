@@ -73,7 +73,9 @@ body {
 	top: 530px;
 }
 
-.chart {
+.chart-recommend {
+	position: absolute;
+	left: -25%;
 	width: 49%;
 	height: 500px;
 	display: inline-block;

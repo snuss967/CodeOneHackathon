@@ -1,0 +1,57 @@
+ @import url(//db.onlinewebfonts.com/c/d641cb7d417e11a5c131089b15fca554?family=DecourW00-Black);
+
+body {
+	background-color: #f1f1f1;
+}
+
+.subTitle {
+	position: absolute;
+	top: 128px;
+	font-size: 90px;
+	left: 50%;
+	margin-right: -50%;
+	font-family: "DecourW00-Black";
+	transform: translateX(-50%);
+}
+
+.changeBaseball {
+	position: absolute;
+	top: 100px;
+	font-size: 48px;
+	height: 500px;
+	width: 625px;
+}
+
+.total-value, .change {
+	position: absolute;
+	top: 320px;
+	font-size: 48px;
+	height: 500px;
+	width: 625px;
+}
+
+.total-value {
+	left: 13%;
+}
+
+.change {
+	right: 13%;
+}
+
+.charts-container {
+	position: absolute;
+	height: 3000px;
+	width: 85%;
+	top: 432px;
+	left: 50%;
+	margin-right: -50%;
+	transform: translateX(-50%);
+	background-color: white;
+	box-shadow: 0 0 32px 0 rgba(0, 0, 0, 0.7);
+}
+
+.chart {
+	width: 49%;
+	height: 500px;
+	display: inline-block;
+}

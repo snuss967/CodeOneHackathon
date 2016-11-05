@@ -10,13 +10,17 @@ import { investmentsMethods } from './investmentsMethods.js';
 
 Meteor.startup(() => {
 	allowAll();
-	//publishAll();
+	publishAll();
 	
 	profilesMethods();
 	investmentsMethods();
 	
 	
+	console.log("USER ID: " + Profiles.find({}).fetch()[0]._id);
 	console.log("PROFILES SIZE: " + Profiles.find({}).fetch().length);
+	
+	Investments.remove({});
+	Profiles.remove({});
 	
 	//TODO initialize database
 	if(Profiles.find({}).fetch().length < 1) { 
@@ -66,6 +70,7 @@ Meteor.startup(() => {
 		//createInvestment("Some other investment option", 2.5, "A some other investment option is...[INSERT REAL DESCRIPTION HERE]...", values);
 
 		var investments = Investments.find({}).fetch();
+		console.log("NUMBER OF INVESTMENTS: " + investments.length);
 		
 		Profiles.insert({
 			name: "Matthew",

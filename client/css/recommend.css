@@ -43,7 +43,7 @@ body {
 	height: 25px;
 	font-size: 30px;
 	width: 100%;
-	font-family: 'Avenir Next Pro';
+	font-family: 'Montserrat';
 }
 
 #subtitle1 {
@@ -63,17 +63,19 @@ body {
 }
 
 #resultsHeader {
-	font-family: 'Avenir Next Pro Bold';
+	font-family: 'Montserrat';
 	top: 460px;
 	font-size: 40px;
 }
 #resultsSubtext {
-	font-family: 'Avenir Next Pro';
+	font-family: 'Montserrat';
 	font-size: 30px;
 	top: 530px;
 }
 
-.chart {
+.chart-recommend {
+	position: absolute;
+	left: -25%;
 	width: 49%;
 	height: 500px;
 	display: inline-block;

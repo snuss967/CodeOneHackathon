@@ -60,4 +60,5 @@
 	  		"transition-duration" : "0.85s",
 	  		"top": "320px"
 	  	});
+		$(".chart").hide().fadeIn(1000);
 	  });

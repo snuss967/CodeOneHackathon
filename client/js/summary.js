@@ -17,19 +17,6 @@ function drawCharts() {
 	drawInvestmentChangeLineChart();
 }
 
-/*
- var data = new google.visualization.DataTable();
-      data.addColumn('string', 'Pizza');
-      data.addColumn('number', 'Populartiy');
-      data.addRows([
-        ['Pepperoni', 33],
-        ['Hawaiian', 26],
-        ['Mushroom', 22],
-        ['Sausage', 10], // Below limit.
-        ['Anchovies', 9] // Below limit.
-      ]);
-	*/
-
 function drawInvestmentSummaryPieChart() {
 	var data = getPieChartData();
 

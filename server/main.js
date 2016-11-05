@@ -14,11 +14,7 @@ Meteor.startup(() => {
 	
 	profilesMethods();
 	investmentsMethods();
-	
-	
-	console.log("USER ID: " + Profiles.find({}).fetch()[0]._id);
-	console.log("PROFILES SIZE: " + Profiles.find({}).fetch().length);
-	
+
 	Investments.remove({});
 	Profiles.remove({});
 	
@@ -31,7 +27,6 @@ Meteor.startup(() => {
 			description: "A Roth IRA is a ...[INSERT REAL DESCRIPTION HERE]...",
 			values: values
 		});
-		//createInvestment("Roth IRA", 1.0, "A Roth IRA is a ...[INSERT REAL DESCRIPTION HERE]...", values);
 		
 		values = [1000, 2000, 3000, 5000, 7500, 11000, 15250, 22500, 34500, 47250, 58250, 69000];
 		Investments.insert({
@@ -40,7 +35,6 @@ Meteor.startup(() => {
 			description: "A ETF is ...[INSERT REAL DESCRIPTION HERE]...",
 			values: values
 		});
-		//createInvestment("ETF", 1.5, "A ETF is ...[INSERT REAL DESCRIPTION HERE]...", values);
 		
 		values = [1000, 2000, 10000, 4500, 11000, 3000, 25000, 15000, 9500, 2000, 13500, 14000];
 		Investments.insert({
@@ -49,7 +43,6 @@ Meteor.startup(() => {
 			description: "A Hedge fund is ...[INSERT REAL DESCRIPTION HERE]...",
 			values: values
 		});
-		//createInvestment("Hedge Fund", 5.0, "A Hedge fund is ...[INSERT REAL DESCRIPTION HERE]...", values);
 		
 		values = [1000, 2000, 3000, 4000, 5250, 7000, 9000, 11250, 13500, 15750, 18000, 21000];
 		Investments.insert({
@@ -58,7 +51,6 @@ Meteor.startup(() => {
 			description: "A Stock is ...[INSERT REAL DESCRIPTION HERE]...",
 			values: values
 		});
-		//createInvestment("Stocks", 0.5, "A Stock is ...[INSERT REAL DESCRIPTION HERE]...", values);
 		
 		values = [1000, 2000, 3500, 4500, 2000, 9000, 11750, 15500, 20000, 23500, 19000, 27500];
 		Investments.insert({
@@ -67,10 +59,8 @@ Meteor.startup(() => {
 			description: "A some other investment option is...[INSERT REAL DESCRIPTION HERE]...",
 			values: values
 		});
-		//createInvestment("Some other investment option", 2.5, "A some other investment option is...[INSERT REAL DESCRIPTION HERE]...", values);
 
 		var investments = Investments.find({}).fetch();
-		console.log("NUMBER OF INVESTMENTS: " + investments.length);
 		
 		Profiles.insert({
 			name: "Matthew",

@@ -9,8 +9,11 @@
 <body>
 	<div class="nav">
 		<img class="logo" src="/res/FNBLogo.png" alt="First National Bank">
-		<button class="nav-tab" onclick="window.location.href = ''">Summary</button>
-		<button class="nav-tab" onclick="window.location.href = '/invest.html'">Investments</button>
-	</div>
-	{{> financialSummary}}
+		<button class="nav-tab" onclick="FlowRouter.go('/summary')">Summary</button>
+		<button class="nav-tab" onclick="FlowRouter.go('/invest')">Investments</button>
+	</div>			
 </body>
+
+<template name="main">
+	{{>Template.dynamic template=content}}
+</template>

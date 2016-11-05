@@ -2,7 +2,9 @@ import { Profiles } from '../../collections/profiles.js';
 import { Investments } from '../../collections/investments.js';
 
 Template.financialSummary.onCreated(function() {
-    Meteor.subscribe('Profiles');
+    Meteor.subscribe('Profiles', function() {
+		drawCharts();
+	});
     Meteor.subscribe('Investments');
 });
 
@@ -29,19 +31,7 @@ function drawCharts() {
 	*/
 
 function drawInvestmentSummaryPieChart() {
-	var data = new google.visualization.DataTable();
-	data.addColumn('string', 'Investment');
-	data.addColumn('number', 'Total Value');
-
-	//TODO Hard code for now
-	var profile = Profiles.findOne({name: "Matthew"})
-
-	for(var i = 0; i < profile.investments.length; i++) {
-		var row = [];
-		row[0] = profile.investments[i].name;
-		row[1] = profile.investments[i].values[profile.investments[i].values.length - 1];
-		data.addRow(row);
-	}
+	var data = getPieChartData();
 
 	var options = {
 		legend: { position: 'right' },
@@ -55,6 +45,37 @@ function drawInvestmentSummaryPieChart() {
 }
 
 function drawInvestmentChangeLineChart() {
+	var data = getChangeLineChartData();
+
+	var options = {
+		legend: { position: 'left' },
+		backgroundColor: { fill:'transparent' }
+	};
+
+	var chart = new google.visualization.LineChart(document.getElementById('investmentChangeLineChart'));
+
+	chart.draw(data, options);
+}   
+
+var getPieChartData = function() {
+	var data = new google.visualization.DataTable();
+	data.addColumn('string', 'Investment');
+	data.addColumn('number', 'Total Value');
+
+	//TODO Hard code for now
+	var profile = Profiles.findOne({name: "Matthew"})
+
+	for(var i = 0; i < profile.investments.length; i++) {
+		var row = [];
+		row[0] = profile.investments[i].name;
+		row[1] = profile.investments[i].values[profile.investments[i].values.length - 1];
+		data.addRow(row);
+	}
+	
+	return data;
+}
+  
+var getChangeLineChartData = function() {
 	var data = new google.visualization.DataTable();
 	data.addColumn('number', 'Year');
 	data.addColumn('number', 'Total Value');
@@ -76,20 +97,10 @@ function drawInvestmentChangeLineChart() {
 		row[1] = totals[i];
 		data.addRow(row);
 	}
+	
+	return data;
+	}  
 
-	var options = {
-		legend: { position: 'left' },
-		backgroundColor: { fill:'transparent' }
-	};
-
-	var chart = new google.visualization.LineChart(document.getElementById('investmentChangeLineChart'));
-
-	chart.draw(data, options);
-}
-
-  
-  
-  
 Template.financialSummary.helpers({
     profileName: function() {
 		//TODO Hard code for now

@@ -55,7 +55,8 @@
         chart.draw(data, options);
 	  }
 
-	  $(document).ready(function() {
+	  $(window).onload(function() {
+		  console.log("DOCUMENT READY");
 	  	$(".total-value, .change").css({
 	  		"transition-duration" : "0.85s",
 	  		"top": "320px"

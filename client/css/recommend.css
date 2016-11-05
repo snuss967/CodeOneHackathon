@@ -41,6 +41,7 @@ body {
 	position: absolute;
 	text-align: center;
 	height: 25px;
+	font-size: 30px;
 	width: 100%;
 	font-family: 'Avenir Next Pro';
 }
@@ -50,6 +51,25 @@ body {
 }
 #subtitle2 {
 	top: 350px;
+}
+
+.results {
+	position: absolute;
+	text-align: center;
+	height: 25px;
+	width: 100%;
+	
+}
+
+#resultsHeader {
+	font-family: 'Avenir Next Pro Bold';
+	top: 570px;
+	font-size: 40px;
+}
+#resultsSubtext {
+	font-family: 'Avenir Next Pro';
+	font-size: 30px;
+	top: 630px;
 }
 
 .chart {

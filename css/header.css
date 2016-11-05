@@ -1,0 +1,47 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+#nav {
+	margin: 0;
+	height: 72px;
+	width: 100vw;
+	background-color: #006633;
+	position: fixed;
+}
+
+#logo {
+	height: 80%;
+	width: auto;
+	display: block;
+	position: absolute;
+	top: 5px;
+	left: 20px;
+}
+
+#nav-tab-1, #nav-tab-2 {
+	color: white;
+	outline: none;
+	border: none;
+	background-color: #006633;
+	height: 100%;
+	width: 160px;
+	font-size: 24px;
+	transition-duration: 0.2s;
+	position: absolute;
+	top: 0;
+}
+
+#nav-tab-1 {
+	left: 100px;
+}
+
+#nav-tab-2 {
+	left: 260px;
+}
+
+#nav-tab-1:hover, #nav-tab-2:hover {
+	background-color: #00562b;
+	transition-duration: 0.2s;
+}

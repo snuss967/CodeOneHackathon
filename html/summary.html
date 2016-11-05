@@ -2,10 +2,33 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="../css/summary.css">
+		<link rel="stylesheet" href="../css/header.css">
 		<title>Financial Summary</title>
 		<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js'></script>
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+		<script type="text/javascript" src="../js/summary.js"></script>
 	</head>
 	<body>
+		<div id="nav">
+			<img id="logo" src="../res/FNBLogo.png" alt="First National Bank">
+			<button id="nav-tab-1" onclick="window.location.href = ''">Summary</button>
+			<button id="nav-tab-2" onclick="window.location.href = './invest.html'">Investments</button>
+		</div>
 		
+		<div class="sumRow">
+			<div class="summaryRow">
+				<div class="summaryColumn">
+					<div class="summaryDiv title">Total Value:</div>
+					<div class="summaryDiv">$33,068</div>
+				</div>
+				<div class="summaryColumn">
+					<div class="summaryDiv title">Today's Change:</div>
+					<div class="summaryDiv">+1.05%</div>
+				</div>
+			</div>
+		</div>
+	
+		<div id="investmentSummaryPieChart" class="chart"></div>
+		<div id="investmentChangeLineChart" class="chart"></div>
 	</body>
 </html>

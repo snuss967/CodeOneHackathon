@@ -50,7 +50,7 @@ var getPieChartData = function() {
 	data.addColumn('number', 'Total Value');
 
 	//TODO Hard code for now
-	var profile = Profiles.findOne({name: "Matthew"})
+	var profile = Profiles.findOne({name: "Matthew"});
 
 	for(var i = 0; i < profile.investments.length; i++) {
 		var row = [];
@@ -102,6 +102,7 @@ Template.financialSummary.helpers({
 		for(var i = 0; i < profile.investments.length; i++) {
 			totalValue += profile.investments[i].values[profile.investments[i].values.length - 1];
 		}
+		totalValue += profile.balance;
 		
 		return totalValue.toLocaleString();
 	},

@@ -1,0 +1,91 @@
+ @import url(//db.onlinewebfonts.com/c/d641cb7d417e11a5c131089b15fca554?family=DecourW00-Black);
+
+body {
+	background-color: #f1f1f1;
+}
+
+
+.subTitle {
+	position: absolute;
+	top: 128px;
+	font-size: 90px;
+	left: 50%;
+	margin-right: -50%;
+	font-family: "DecourW00-Black";
+	transform: translateX(-50%);
+}
+
+.menuBar {
+	position: absolute;
+	left: 10%;
+	height: 25px;
+	width: 80%;
+	background-color: blue;
+}
+
+#menuBar1 {
+	top: 350px;
+}
+#menuBar2 {
+	top: 250px;
+}
+.total-value {
+	left: 13%;
+}
+
+.change {
+	right: 13%;
+}
+
+.subtitle {
+	position: absolute;
+	text-align: center;
+	height: 25px;
+	font-size: 30px;
+	width: 100%;
+	font-family: 'Avenir Next Pro';
+}
+
+#subtitle1 {
+	top: 390px;
+}
+#subtitle2 {
+	top: 290px;
+}
+
+.results {
+	position: absolute;
+	text-align: left;
+	margin-left: 40px;	
+	height: 25px;
+	width: 100%;
+	
+}
+
+#resultsHeader {
+	font-family: 'Avenir Next Pro Bold';
+	top: 460px;
+	font-size: 40px;
+}
+#resultsSubtext {
+	font-family: 'Avenir Next Pro';
+	font-size: 30px;
+	top: 530px;
+}
+
+.chart {
+	width: 49%;
+	height: 500px;
+	display: inline-block;
+}
+.charts-container-recommend {
+	position: absolute;
+	height: 500px;
+	width: 40%;
+	top: 450px;
+	left: 65%;
+	margin-right: -50%;
+	transform: translateX(-50%);
+	background-color: white;
+	box-shadow: 0 0 32px 0 rgba(0, 0, 0, 0.7);
+}

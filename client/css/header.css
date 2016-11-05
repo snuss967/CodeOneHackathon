@@ -30,14 +30,32 @@ html, body {
 	border: none;
 	background-color: #006633;
 	height: 100%;
-	width: 180px;
-	font-size: 28px;
+	width: auto;
+	padding: 0 16px;
+	font-size: 32px;
 	float: left;
 	transition-duration: 0.2s;
 }
 
-.nav-tab:hover {
+.nav-tab:hover, .menu-tab:hover {
 	background-color: #00562b;
 	cursor: pointer;
 	transition-duration: 0.2s;
+}
+
+.menu-tab {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	outline: none;
+	border: none;
+	background-color: #006633;
+	height: 100%;
+	width: 84px;
+	padding: 0 16px;
+	font-size: 32px;
+	float: right;
+	margin-right: 32px;
+	transition-duration: 0.2s;
+	display: none;
 }

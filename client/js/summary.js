@@ -1,70 +1,140 @@
-	google.charts.load('current', {'packages':['corechart']});
-    google.charts.setOnLoadCallback(drawCharts);
+import { Profiles } from '../../collections/profiles.js';
+import { Investments } from '../../collections/investments.js';
 
-	//Draws all the charts to the screen
-    function drawCharts() {
-		drawInvestmentSummaryPieChart();
-		drawInvestmentChangeLineChart();
-    }
+Template.financialSummary.onCreated(function() {
+    Meteor.subscribe('Profiles');
+    Meteor.subscribe('Investments');
+});
 
-	function drawInvestmentSummaryPieChart() {
-		var data = google.visualization.arrayToDataTable([
-			['Investment', 'Total Value'],
-			['Roth IRA', 105.3],
-			['ETF', 20.3],
-			['Stocks', 50.23],
-			['Hedge', 70.203],
-			['Liquid', 30.232]
-        ]);
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawCharts);
 
-        var options = {
-			legend: { position: 'right' },
-			colors: [ '#00b2a9', '#d7c826', '#007396', '#ffaa4d', '#7c2529', '#f3dd6d' ],
-			backgroundColor: { fill:'transparent' }
-        };
+//Draws all the charts to the screen
+function drawCharts() {
+	drawInvestmentSummaryPieChart();
+	drawInvestmentChangeLineChart();
+}
 
-        var chart = new google.visualization.PieChart(document.getElementById('investmentSummaryPieChart'));
+/*
+ var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Pizza');
+      data.addColumn('number', 'Populartiy');
+      data.addRows([
+        ['Pepperoni', 33],
+        ['Hawaiian', 26],
+        ['Mushroom', 22],
+        ['Sausage', 10], // Below limit.
+        ['Anchovies', 9] // Below limit.
+      ]);
+	*/
 
-        chart.draw(data, options);
-	  }
+function drawInvestmentSummaryPieChart() {
+	var data = new google.visualization.DataTable();
+	data.addColumn('string', 'Investment');
+	data.addColumn('number', 'Total Value');
 
-	  function drawInvestmentChangeLineChart() {
-		var data = google.visualization.arrayToDataTable([
-			['Month', 'Expected', 'Realized'],
-			['January', 1000, 400],
-			['February', 1170, 460],
-			['March', 660, 1120],
-			['April', 1030, 540],
-			['May', 660, 1120],
-			['June', 123, 421],
-			['July', 423, 1111],
-			['August', 789, 321],
-			['September', 432, 543],
-			['October', 12, 423],
-			['November', 1233, 412],
-			['December', 660, 1120],
+	//TODO Hard code for now
+	var profile = Profiles.findOne({name: "Matthew"})
 
-        ]);
+	for(var i = 0; i < profile.investments.length; i++) {
+		var row = [];
+		row[0] = profile.investments[i].name;
+		row[1] = profile.investments[i].values[profile.investments[i].values.length - 1];
+		data.addRow(row);
+	}
 
-        var options = {
-			legend: { position: 'left' },
-			backgroundColor: { fill:'transparent' }
-        };
+	var options = {
+		legend: { position: 'right' },
+		colors: [ '#00b2a9', '#d7c826', '#007396', '#ffaa4d', '#7c2529', '#f3dd6d' ],
+		backgroundColor: { fill:'transparent' }
+	};
 
-        var chart = new google.visualization.LineChart(document.getElementById('investmentChangeLineChart'));
+	var chart = new google.visualization.PieChart(document.getElementById('investmentSummaryPieChart'));
 
-        chart.draw(data, options);
-	  }
+	chart.draw(data, options);
+}
 
-	  $(document).ready(function() {
-		  setTimeout(function() {
-				$(".total-value, .change").css({
-					"transition-duration": "1.2s",
-					"top": "320px"
-				});
-				$(".chart").hide().fadeIn(1500);
-				$(".total-value, .change").css({
-					"transition-duration": "0s"
-				});
-			}, 50);
-	  });
+function drawInvestmentChangeLineChart() {
+	var data = new google.visualization.DataTable();
+	data.addColumn('number', 'Year');
+	data.addColumn('number', 'Total Value');
+
+	//TODO Hard code for now
+	var profile = Profiles.findOne({name: "Matthew"});
+
+	var totals = [];
+	for(var i = 0; i < profile.investments.length; i++) {
+		for(var j = 0; j < profile.investments[i].values.length; j++) {
+			if(i == 0) totals[j] = 0;
+			totals[j] += profile.investments[i].values[j];
+		}
+	}
+		
+	for(var i = 0; i < totals.length; i++) {
+		var row = [];
+		row[0] = i;
+		row[1] = totals[i];
+		data.addRow(row);
+	}
+
+	var options = {
+		legend: { position: 'left' },
+		backgroundColor: { fill:'transparent' }
+	};
+
+	var chart = new google.visualization.LineChart(document.getElementById('investmentChangeLineChart'));
+
+	chart.draw(data, options);
+}
+
+  
+  
+  
+Template.financialSummary.helpers({
+    profileName: function() {
+		//TODO Hard code for now
+		var profile = Profiles.findOne({name: "Matthew"});
+        return profile.name;
+    },
+	totalValue: function() {
+		//TODO Hard code for now
+		var profile = Profiles.findOne({name: "Matthew"});
+		
+		var totalValue = 0;
+		for(var i = 0; i < profile.investments.length; i++) {
+			totalValue += profile.investments[i].values[profile.investments[i].values.length - 1];
+		}
+		
+		return totalValue.toLocaleString();
+	},
+	todaysChange: function() {
+		var profile = Profiles.findOne({name: "Matthew"});
+		
+		var totalValueToday = 0;
+		var totalValueYesterday = 0;
+		for(var i = 0; i < profile.investments.length; i++) {
+			totalValueToday += profile.investments[i].values[profile.investments[i].values.length - 1];
+			totalValueYesterday += profile.investments[i].values[profile.investments[i].values.length - 2];
+		}
+	
+		var percent = totalValueToday / totalValueYesterday;
+		if(percent < 1.0) {
+			percent = (-1 / percent).toFixed(2);
+		}
+		
+		return percent.toFixed(2);
+	}
+});
+
+$(document).ready(function() {
+  setTimeout(function() {
+		$(".total-value, .change").css({
+			"transition-duration": "1.2s",
+			"top": "320px"
+		});
+		$(".chart").hide().fadeIn(1500);
+		$(".total-value, .change").css({
+			"transition-duration": "0s"
+		});
+	}, 50);
+});

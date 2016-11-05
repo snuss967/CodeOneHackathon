@@ -3,14 +3,25 @@
 
   <link rel="stylesheet" href="../css/header.css">
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
+  <script type="text/javascript">
+    (function() {
+        var path = '//easy.myfonts.net/v2/js?sid=210860(font-family=Avenir+Next+Pro+Bold)&sid=217165(font-family=Avenir+Next+Pro)&sid=217166(font-family=Avenir+Next+Pro+Medium)&sid=217815(font-family=Avenir+Next+Pro+UltraLight)&key=xIdOLuCH08',
+            protocol = ('https:' == document.location.protocol ? 'https:' : 'http:'),
+            trial = document.createElement('script');
+        trial.type = 'text/javascript';
+        trial.async = true;
+        trial.src = protocol + path;
+        var head = document.getElementsByTagName("head")[0];
+        head.appendChild(trial);
+    })();
+</script>
 </head>
-
 <body>
 	<div class="nav">
 		<img class="logo" src="/res/FNBLogo.png" alt="First National Bank">
-		<button class="nav-tab" onclick="window.location = '/'; return false;">Summary</button>
+		<button class="nav-tab" onclick="window.location = '/summary'; return false;">Summary</button>
 		<button class="nav-tab" onclick="window.location = '/invest'">Investments</button>
+		<button class="nav-tab" onclick="window.location = '/recommend'">Recommend</button>
 		<button class="menu-tab"><div class="menu icon"></div></button>
 	</div>
 </body>

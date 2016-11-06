@@ -4,7 +4,7 @@ const investmentTypes = [
 {
 	name: "Money Markets",
 	id: "moneyMarkets",
-	description: "Money Market Accounts are similar to savings accounts in that they are extremely liquid. However, here at First National Bank they receive a higher rate of return and require a $1000 minimum balance to open. They are a strong option for someone seeking to keep their funds liquid but would like to return a higher rate of return than a traditional savings account.",
+	description: "Money Market Accounts are similar to savings accounts in that they are extremely liquid. However, here at First National Bank they receive a higher rate of return and require a $1000 minimum balance to open. They are a strong option for someone seeking to keep their funds liquid, but would like to attain a higher rate of interest than a traditional savings account.",
 	averageRateOfReturn: 0.01,
 	fluidity: 4.7,
 	security: 4.8,
@@ -15,7 +15,7 @@ const investmentTypes = [
 {
 	name: "Individual Retirement Account",
 	id: "ira",
-	description: "An Individual Retirement Account IRA is a Government protected tax free retirement account in which one can place $5,500 of their yearly income tax free those 	50 and over can contribute $6,500 per year. They come in a few forms including: The traditional where you pay taxes on your money when you receive it at Retirement and the Roth where you pay taxes on your money when you place it in your account. IRAs are great for those looking for a retirement account if they do not have a 401K or if they have already maxed out their 401K.",
+	description: "An Individual Retirement Account IRA is a Government protected tax free retirement account in which one can place $5,500 of their yearly income, tax free. Those 50 and over can contribute $6,500 per year. They come in a few forms including: The traditional where taxes are paid on one's money when they receive it at Retirement and the Roth where you pay taxes on your money when you place it in your account. IRAs are great for those looking for a retirement account if they do not have a 401K or if they have already maxed out their 401K.",
 	averageRateOfReturn: 0.075,
 	fluidity: 1.5,
 	security: 4.4,
@@ -26,7 +26,7 @@ const investmentTypes = [
 {
 	name: "Low Risk Mutual Funds",
 	id: "lowRiskMutualFunds",
-	description: "A mutual fund is a collection of stocks that are managed and are owned by a collection of people. Low risk mutual funds are funds that will generate returns that are usually lower than a high or moderate risk mutual fund by the chance that one will lose a significant amount of money in the account is much lower. These funds are taxed and may or may not charge commission, most usually charge management fees on both the initial principle as well as the returns that the fund yields. Low risk mutual funds are a good option for those looking for a short term investment vehicle.",
+	description: "A mutual fund is a collection of stocks that are managed and owned by a collection of people. Low risk mutual funds are funds that will generate returns that are generally lower than a high or moderate risk mutual fund. But the chance that one will lose a significant amount of money in the account is much lower. These funds are taxed and may or may not charge commission. Most Mutual Funds usually charge management fees on both the initial principle as well as the returns that the fund yields. Low risk mutual funds are a good option for those looking for a short term investment vehicle.",
 	averageRateOfReturn: 0.08,
 	fluidity: 3.5,
 	security: 4.1,
@@ -37,7 +37,7 @@ const investmentTypes = [
 {
 	name: "Aggressive Growth Mutual Funds",
 	id: "highRiskMutualFunds",
-	description: "A mutual fund is a collection of stocks that are managed and are owned by a collection of people. High risk mutual funds are funds that will generate return rates that are usually higher than a low or moderate risk mutual fund but run the risk one will lose a significant amount of money in the account. These funds are taxed and may or may not charge commission, most usually charge management fees on both the initial principle as well as the returns that the fund yields. High risk mutual funds are a good option for those looking for a long term investment vehicle.",
+	description: "A mutual fund is a collection of stocks that are managed and owned by a collection of people. High risk mutual funds are funds that will generate return rates that are generally higher than a low or moderate risk mutual fund, but run the risk that one will lose a significant amount of money in the account. These funds are taxed and may or may not charge commission. Most usually charge management fees on both the initial principle as well as the returns that the fund yields. High risk mutual funds are a good option for those in search of a long term investment vehicle.",
 	averageRateOfReturn: 0.1,
 	fluidity: 2.5,
 	security: 2.4,
@@ -48,7 +48,7 @@ const investmentTypes = [
 {
 	name: "Moderate Risk Mutual Funds",
 	id: "moderateRiskMutualFunds",
-	description: "A mutual fund is a collection of stocks that are managed and are owned by a collection of people. Moderate risk mutual funds are funds that will generate return rates that are usually higher than a low risk mutual fund, but lower than a high risk mutual fund. They run the risk of losing money but not as great as a High Risk mutual fund. These funds are taxed and may or may not charge commission, most usually charge management fees on both the initial principle as well as the returns that the fund yields. Moderate risk mutual funds are a good option for those looking for an investment vehicle of at least eight years. ",
+	description: "A mutual fund is a collection of stocks that are managed and owned by a collection of people. Moderate risk mutual funds are funds that will generate return rates that are generally higher than a low risk mutual fund, but lower than those of a high risk mutual fund. They run the risk of losing money, but not as great of a chance as a High Risk mutual fund. These funds are taxed and may or may not charge commission, most usually charge management fees on both the initial principle as well as the returns that the fund yields. Moderate risk mutual funds are a good option for those looking for an investment vehicle of at least eight years. ",
 	averageRateOfReturn: 0.09,
 	fluidity: 3.9,
 	security: 3.7,
@@ -499,6 +499,15 @@ Template.invest.events({
 	'change .investmentTypesCheckbox':function(event) {		
 		var inputs = document.getElementsByTagName("INPUT");
 		
+		//Set the description text at the bottom to the most recent item they clicked on
+		const id = event.target.id;
+		for(var i = 0; i < investmentTypes.length; i++) {
+			if(investmentTypes[i].id === id) {
+				document.getElementById('invest-single-description').innerHTML = investmentTypes[i].description;
+				break;
+			}
+		}
+		
 		var finalData = [];
 		var selected = [];
 		for(var i = 0; i < inputs.length; i++) {
@@ -537,13 +546,6 @@ Template.invest.helpers({
 	},
 	selectedInvestmentTypes: function() {
 		var selectedInvestmentTypes = Session.get("selectedInvestmentTypes");
-		
-		if(selectedInvestmentTypes.length <= 1) {
-			//Set that description part to some text
-			document.getElementById('invest-single-description').innerHTML = selectedInvestmentTypes[0].description;
-		} else {
-			document.getElementById('invest-single-description').innerHTML = "";
-		}
 		
 		return selectedInvestmentTypes;
 	}

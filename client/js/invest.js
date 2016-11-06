@@ -434,7 +434,8 @@ const investmentTypes = [
 ];
 
 Template.invest.onCreated(function() {
-	Session.set("data", [1.2, 3.4, 4.5, 2.1, 2.2]);
+	Session.set("data", []);
+	Session.set("selectedInvestmentTypes", []);
 });
 
 Template.invest.helpers({
@@ -498,8 +499,15 @@ Template.invest.events({
 		var inputs = document.getElementsByTagName("INPUT");
 	
 		var finalData = [];
+		var selected = [];
 		for(var i = 0; i < inputs.length; i++) {
 			if(inputs[i].type === 'checkbox' && inputs[i].checked) {
+				selected.push({
+					name: investmentTypes[i].name,
+					averageRateOfReturn: investmentTypes[i].averageRateOfReturn * 100,
+					description: investmentTypes[i].description
+				});
+				
 				var data = [];
 				data[0] = investmentTypes[i].fluidity;
 				data[1] = investmentTypes[i].security;
@@ -517,6 +525,7 @@ Template.invest.events({
 			}
 		}
 		
+		Session.set("selectedInvestmentTypes", selected);
 		Session.set("data", finalData);
 	}
 });
@@ -524,5 +533,17 @@ Template.invest.events({
 Template.invest.helpers({
 	investmentTypes: function() {
 		return investmentTypes;
+	},
+	selectedInvestmentTypes: function() {
+		var selectedInvestmentTypes = Session.get("selectedInvestmentTypes");
+		
+		if(selectedInvestmentTypes.length <= 1) {
+			//Set that description part to some text
+			document.getElementById('invest-single-description').innerHTML = selectedInvestmentTypes[0].description;
+		} else {
+			document.getElementById('invest-single-description').innerHTML = "";
+		}
+		
+		return selectedInvestmentTypes;
 	}
 });

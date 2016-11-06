@@ -1,7 +1,7 @@
 <template name="financialSummary">
 	<head>
 		<title>Financial Summary</title>
-		
+
 		<script type="text/javascript" src="../js/summary.js"></script>
 	</head>
 	<body>
@@ -15,18 +15,19 @@
 				<ul>
 					{{#each todaysChangeSeparated}}
 						<li>
-							<span style="color: {{color}};">{{percentChange}}</span>{{name}}
+							{{name}} <span class='percents' style="color: {{color}};">{{percentChange}}%</span>
 						</li>
 					{{/each}}
 				</ul>
 			</div>
-			<div class="median-info"></div>
+			<div class="median"></div>
 			<div class="line-info">
+				You are...<br>
 				<ul>
 					{{#each comparedToDifferentTimes}}
 						<li>
-							<span> Compared to {{yearsAgo}} years ago you are </span> <span style="color: {{color}}">{{multiplier}}</span><span> times {{preposition}} off now than you were {{yearsAgo}} years ago</span>
-						</li>
+							<span style="color: {{color}}">{{multiplier}}X</span><span> {{preposition}} off now than {{yearsAgo}} years ago</span>
+						</li><br>
 					{{/each}}
 				</ul>
 			</div>

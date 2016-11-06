@@ -1,0 +1,17 @@
+<template name="pastperformance">
+	<head>
+		<title>Past Performance</title>
+	</head>
+	<body>
+		<div class="title">Previous Day's Profits and Losses</div>
+		<div class="total-value">Net Worth: <b>${{totalValue}}</b></div>
+		<div class="change">Today's Change: <b>{{todaysChange}}%</b></div>
+
+		<div class="charts-container">
+			<div id="investmentSummaryPieChart" class="summary-chart"></div>
+			<div id="investmentChangeLineChart" class="summary-chart"></div>
+		</div>
+
+		<script type="text/javascript" src="../js/summary.js"></script>
+	</body>
+</template>

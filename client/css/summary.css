@@ -69,10 +69,14 @@ body {
 
 .total-value {
 	left: 21%;
+	border: none;
+    outline:none;
 }
 
 .change {
 	right: 21%;
+	border: none;
+    outline:none;
 }
 
 .charts-container {
@@ -92,14 +96,45 @@ body {
 #investmentSummaryPieChart {
 	width: 1000px;
 	height: 500px;
-	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: -96px;
+}
+
+.pi-info, .median-info, .line-info {
+	position: absolute;
+	background-color: pink;
+}
+
+.pi-info {
+	height: 400px;
+	width: 500px;
+	top: 64px;
+	right: 64px;
+}
+
+.median-info {
+	height: 75px;
+	top: 500px;
+	width: 90%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translateX(-50%);
+}
+
+.line-info {
+	height: 375px;
+	width: 350px;
+	bottom: 64px;
+	left: 64px;
 }
 
 #investmentChangeLineChart {
-	float: right;
-	display: inline-block;
+	position: absolute;
 	width: 1000px;
 	height: 500px;
+	bottom: 0;
+	right: 0;
 }
 
 .menu.icon {

@@ -38,34 +38,13 @@ input[type=number] {
 }
 
 .savings-num {
-	width: 108px;
+	width: 118px;
 	font-family: "Montserrat";
 }
 
 .years-num {
-	width: 42px;
+	width: 52px;
 	font-family: "Montserrat";
-}
-
-input[type=number]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    cursor: pointer;
-    display: block;
-    width: 8px;
-    color: #333;
-    text-align: center;
-    position: relative;
-}
-
-input[type=number]:hover::-webkit-inner-spin-button {
-    background: url("../../public/NumberSelectArrows.png") no-repeat 100% 100%;
-    width: 140px;
-    height: 280px;
-	border: 2px solid red;
-    padding: 4px;
-    position: relative;
-    right: 4px;
-    border-radius: 28px;
 }
 
 .savings-min, .savings-max {
@@ -153,7 +132,7 @@ input[type=number]:hover::-webkit-inner-spin-button {
 .prospect-chart-container {
 	position: absolute;
 	right: 200px;
-	top: 500px;
+	top: 510px;
 	height: 550px;
 	width: 700px;
 	background-color: white;

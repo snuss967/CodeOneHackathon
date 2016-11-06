@@ -499,6 +499,15 @@ Template.invest.events({
 	'change .investmentTypesCheckbox':function(event) {		
 		var inputs = document.getElementsByTagName("INPUT");
 		
+		//Set the description text at the bottom to the most recent item they clicked on
+		const id = event.target.id;
+		for(var i = 0; i < investmentTypes.length; i++) {
+			if(investmentTypes[i].id === id) {
+				document.getElementById('invest-single-description').innerHTML = investmentTypes[i].description;
+				break;
+			}
+		}
+		
 		var finalData = [];
 		var selected = [];
 		for(var i = 0; i < inputs.length; i++) {
@@ -537,13 +546,6 @@ Template.invest.helpers({
 	},
 	selectedInvestmentTypes: function() {
 		var selectedInvestmentTypes = Session.get("selectedInvestmentTypes");
-		
-		if(selectedInvestmentTypes.length <= 1) {
-			//Set that description part to some text
-			document.getElementById('invest-single-description').innerHTML = selectedInvestmentTypes[0].description;
-		} else {
-			document.getElementById('invest-single-description').innerHTML = "";
-		}
 		
 		return selectedInvestmentTypes;
 	}

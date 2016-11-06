@@ -118,7 +118,7 @@ var generateResponseText = function(lengthOfTimeNoInvestment, lengthOfTimeInvest
 var generateRecommendedSavingsChartData = function() {
 	var totalCostOfActivity  = parseInt($('.howMuch-text').val());
 	var nameOfActivity= $('.what-text').val();
-	var weeklyAddition = parseInt($('.savings-num').val());
+	var weeklyAddition = parseInt($('.dream-savings-num').val());
 	var annualAddition = weeklyAddition * 52;
 	var numberOfWeeks = (totalCostOfActivity/weeklyAddition);
 	var numberOfYears = (numberOfWeeks / 52);
@@ -173,8 +173,8 @@ var generateRecommendedSavingsChartData = function() {
 
 $(document).ready(function() {
 	setTimeout(function() {
-		$('.savings').change(function() {
-			$('.savings-num').val($(this).val());
+		$('.dream-savings').change(function() {
+			$('.dream-savings-num').val($(this).val());
 			drawCharts();
 		});
 })});

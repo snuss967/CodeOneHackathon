@@ -1,6 +1,8 @@
 <template name="financialSummary">
 	<head>
 		<title>Financial Summary</title>
+		
+		<script type="text/javascript" src="../js/summary.js"></script>
 	</head>
 	<body>
 		<div class="title">Financial Summary</div>
@@ -9,12 +11,26 @@
 
 		<div class="charts-container">
 			<div id="investmentSummaryPieChart" class="summary-chart"></div>
-			<div class="pi-info"></div>
+			<div class="pi-info">
+				<ul>
+					{{#each todaysChangeSeparated}}
+						<li>
+							<span style="color: {{color}};">{{percentChange}}</span>{{name}}
+						</li>
+					{{/each}}
+				</ul>
+			</div>
 			<div class="median-info"></div>
-			<div class="line-info"></div>
+			<div class="line-info">
+				<ul>
+					{{#each comparedToDifferentTimes}}
+						<li>
+							<span> Compared to {{yearsAgo}} years ago you are </span> <span style="color: {{color}}">{{multiplier}}</span><span> times {{preposition}} off now than you were {{yearsAgo}} years ago</span>
+						</li>
+					{{/each}}
+				</ul>
+			</div>
 			<div id="investmentChangeLineChart" class="summary-chart"></div>
 		</div>
-
-		<script type="text/javascript" src="../js/summary.js"></script>
 	</body>
 </template>

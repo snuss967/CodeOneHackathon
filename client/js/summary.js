@@ -50,7 +50,7 @@ var getPieChartData = function() {
 
 	//TODO Hard code for now
 	var profile = Profiles.findOne({name: "Matthew"});
-	
+
 	for(var i = 0; i < profile.investments.length; i++) {
 		var row = [];
 		row[0] = profile.investments[i].name;
@@ -119,66 +119,80 @@ Template.financialSummary.helpers({
 
 		var percent = totalValueToday / totalValueYesterday;
 		if(percent < 1.0) {
-			percent = (-1.0 / percent).toFixed(2);
+			percent = (-1.0 / percent);
 		}
 
+		percent--;
+		percent = percent * 100;
 		return percent.toFixed(2);
 	},
 	todaysChangeSeparated: function() {
 		//TODO hard code for now
 		var profile = Profiles.findOne({name: "Matthew"});
-		
+
 		var changes = [];
-		
+
 		//Changes will have, a color, the investment thats changing, the percent change
 		for(var i = 0; i < profile.investments.length; i++) {
 			var percentChange = profile.investments[i].values[profile.investments[i].values.length - 1] / profile.investments[i].values[profile.investments[i].values.length - 2];
 			if(percentChange < 1.0) {
 				percentChange = (-1.0 / percentChange);
 			}
-			
+			percentChange--;
+			percentChange = percentChange * 100;
+
 			var color = (percentChange < 0) ? 'red' : 'green';
-			
+
 			changes.push({
 				name: profile.investments[i].name,
 				percentChange: percentChange.toFixed(2),
 				color: color
 			});
 		}
-		
+
 		console.log(changes);
-		
+
 		return changes;
 	},
 	comparedToDifferentTimes: function() {
 		//TODO hard code for now
 		var profile = Profiles.findOne({name: "Matthew"});
-		
+
 		var comparedTo = [];
-		
+
 		//Compared to will have a time difference, and a multiplier
 		var totalValues = [];
-		for(var i = 0; i < profile.investments.length; i++) {			
+		for(var i = 0; i < profile.investments.length; i++) {
 			for(var j = 0; j < profile.investments[i].values.length; j++) {
 				if(i == 0) totalValues[j] = 0;
 				totalValues[j] += profile.investments[i].values[j];
 			}
 		}
-		
+
 		for(var i = 0; i < totalValues.length - 1; i += 3) {
 			var multiplier = totalValues[totalValues.length - 1] / totalValues[i];
 			if(multiplier < 1.0) {
 				multiplier = (-1.0 / percentChange);
 			}
-			
+
 			comparedTo.push({
 				yearsAgo: totalValues.length - i,
 				multiplier: multiplier.toFixed(2),
 				color: (multiplier < 0) ? 'red' : 'green',
-				preposition: (multiplier < 0) ? 'worse' : 'better' 
+				preposition: (multiplier < 0) ? 'worse' : 'better'
 			});
 		}
-		
+
 		return comparedTo.reverse();
 	}
 });
+
+// $(document).ready(function() {
+// 	$(".total-value, .change").hover(function() {
+// 		alert("hey");
+// 		$(this).css({
+// 			"top": "320px",
+// 			"transition-duration": "0.25s"
+// 		});
+// 	});
+// });

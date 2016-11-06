@@ -1,7 +1,7 @@
 @import url(//db.onlinewebfonts.com/c/d641cb7d417e11a5c131089b15fca554?family=DecourW00-Black);
 
 body {
-	background-color: #f1f1f1;
+	background-color: #e1e1e1;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-moz-user-select: none;
@@ -35,6 +35,10 @@ body {
 	background-color: #006633;
 	font-family: "DecourW00-Black";
 	box-shadow: 0 0 16px 2px rgba(0, 0, 0, 0.5);
+}
+
+.total-value:hover, .change:hover {
+	cursor: pointer;
 }
 
 @media (max-width: 1800px) {
@@ -81,7 +85,7 @@ body {
 
 .charts-container {
 	position: absolute;
-	height: 1050px;
+	height: 950px;
 	width: 70%;
 	top: 432px;
 	left: 50%;
@@ -98,43 +102,55 @@ body {
 	height: 500px;
 	position: absolute;
 	top: 0;
-	left: -96px;
+	left: -132px;
 }
 
-.pi-info, .median-info, .line-info {
+.pi-info, .line-info {
 	position: absolute;
-	background-color: pink;
+	font-family: "Montserrat";
+	background-color: #e1e1e1;
 }
 
 .pi-info {
-	height: 400px;
-	width: 500px;
-	top: 64px;
-	right: 64px;
+	height: 190px;
+	width: 520px;
+	top: 175px;
+	right: 100px;
+	border-left: 4px solid #063;
+	font-size: 24px;
 }
 
-.median-info {
-	height: 75px;
-	top: 500px;
-	width: 90%;
+.percents {
+	float: right;
+	margin-right: 20px;
+}
+
+.median {
+	position: absolute;
+	background-color: #063;
+	height: 4px;
+	top: 450px;
+	width: 80%;
 	left: 50%;
 	margin-right: -50%;
 	transform: translateX(-50%);
 }
 
 .line-info {
-	height: 375px;
-	width: 350px;
-	bottom: 64px;
+	height: 225px;
+	width: 450px;
+	bottom: 150px;
 	left: 64px;
+	padding: 12px;
+	border-right: 4px solid #063;
 }
 
 #investmentChangeLineChart {
 	position: absolute;
-	width: 1000px;
+	width: 600px;
 	height: 500px;
 	bottom: 0;
-	right: 0;
+	right: 325px;
 }
 
 .menu.icon {

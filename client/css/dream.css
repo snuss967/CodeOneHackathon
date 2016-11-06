@@ -1,4 +1,5 @@
 html, body {
+	background-color: #e1e1e1;
 	height: 6000px
 	margin: 0;
 	padding: 0;
@@ -250,11 +251,15 @@ input[type=range]:focus::-ms-fill-upper {
  		   transform: translate(-50%, -50%);
 }
 
-.feedbackText {
-   font-family: 'Montserrat';
-   font-size: 20px;
-   position: absolute;
-   left: 15%
-   top: 1600px;
-   width: 70%;
+.feedback {
+	position: absolute;
+	top: 2400px;
+	width: 80%;
+	min-height: 24px;
+	background-color: white;
+	box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.5);
+	left: 50%;
+	margin-right: -50%;
+	transform: translateX(-50%);
+	margin-bottom: 128px;
 }

@@ -50,7 +50,7 @@ function drawRecommendedSavingsChart() {
 	chart.draw(data, options);
 }
 
-var getInterestRateInvestmentMethod = function (numberOfYears, weeklyAddition)
+var getInterestRateInvestmentMethodDream = function (numberOfYears, weeklyAddition)
 {
 	if(numberOfYears < 1.5)
 	{
@@ -95,40 +95,54 @@ var getInterestRateInvestmentMethod = function (numberOfYears, weeklyAddition)
 }
 var getInvestmentType = function(interestRate)
 {
-	switch(interestRate)
+	console.log(interestRate);
+	if(interestRate == 0)
 	{
-		case interestRate == 0:
-			return "Savings Account";
-			break
-		case interestRate == 0.0155:
-			return "Certificate of Deposit";
-			break;
-		case interestRate == 0.055:
-			return "Municipility or Corporate Bond";
-			break;
-		case interestRate == 0.095:
-			return "Index Fund";
-			break;
-		case interestRate >= 0.107:
-			return "Mutual Fund";
-			break;
-		default:
-			return "A Well Diversified Portfolio";
-			break;
+		return "Savings Account";
+	}
+	else if(interestRate == 0.0155)
+	{
+		return "Certificate of Deposit";
+	}
+	else if(interestRate == 0.055)
+	{
+		return "Municipility or Corporate Bond";
+	}
+	else if(interestRate == 0.095)
+	{
+		return "Index Fund";
+	}
+	else if(interestRate >= 0.107)
+	{
+		return "Mutual Fund";
+	}
+	else
+	{
+		return "Diversified Portfolio";
 	}
 }
 //take this function and pass in as a parameter to our call below when editing HTML
-var generateResponseText = function(lengthOfTimeNoInvestment, lengthOfTimeInvestment, weeksYears, totalCostOfActivity, goal, interestRate) {
+var generateResponseText = function(lengthOfTimeNoInvestment, lengthOfTimeInvestment, totalCostOfActivity, goal, interestRate) {
 	if(interestRate > 0)
 	{
-		var text = "In order to help you accomplish your goal of " + goal + " we invested your money in a First National Bank " + getInvestmentType(interestRate) + " which allowed you to earn enough money to accomplish your goal in " + lengthOfTimeInvestment + " by using compound interest. If you would have just saved your money without taking any risk and reaping any reward it would have taken you " + lengthOfTimeNoInvestment + " in order to achieve the same goals. Contact First National today to learn how they can help you in achieving your goals and creating unforgettable firsts. Let us join you!";
+		console.log(getInvestmentType(interestRate));
+		console.log(interestRate);
+		var text = "In order to help you accomplish your goal of " + goal + " we invested your money in a First National Bank " + getInvestmentType(interestRate) + " which allowed you to earn enough money to accomplish your goal in " + lengthOfTimeInvestment + " by using compound interest. If you would have just saved your money without taking any risk and reaping any reward it would have taken you " + lengthOfTimeNoInvestment + " in order to achieve the same goals. Contact First National today to learn how we can help you in achieving your goals and creating unforgettable firsts. Let us join you!";
+		console.log(text);
 		return text;
 	}
 	else
 	{
 		var text = "By putting your money for " + lengthOfTimeNoInvestment + " in a First National Bank Savings Account you can easily achieve your goal of " + goal + ". As you go through and life and have even bigger goals then your current please use the calculator again to see the power of compound interest and how First National Bank can use it to help you accomplish your goals sooner."
+		console.log(text);
 		return text;
 	}
+}
+
+var calculateNumberOfYears = function(futureValue, interestRate, principal)
+{
+	var years = Math.log(1 + ((futureValue * interestRate)/principal))/(Math.log(1 + interestRate));
+	return years;
 }
 
 //Generates the data by using the compound interested with additions formula
@@ -158,7 +172,7 @@ var generateRecommendedSavingsChartData = function() {
 	console.log("NUMBER OF WEEKS: " + numberOfWeeks);
 	console.log("NUMBER OF YEARS: " + numberOfYears);
 	
-	var r = getInterestRateInvestmentMethod(numberOfYears, annualAddition);
+	var r = getInterestRateInvestmentMethodDream(numberOfYears, annualAddition);
 	console.log("R: " + r);
 
 	//The compounded interests from year 0 to year [numberOfYears]
@@ -180,7 +194,7 @@ var generateRecommendedSavingsChartData = function() {
 
 			compoundedInterest.addRow(row);
 		}
-
+		$('#feedback_box').html(generateResponseText(Math.round(numberOfYears) + " years", Math.round(calculateNumberOfYears(totalCostOfActivity, r, annualAddition)) + " years", totalCostOfActivity, nameOfActivity, r));
 		return compoundedInterest;
 	}
 	else
@@ -207,7 +221,7 @@ var generateRecommendedSavingsChartData = function() {
 
 			compoundedInterest.addRow(row);
 		}
-
+		$('#feedback_box').html(generateResponseText(Math.round(numberOfWeeks) + " weeks", 0, totalCostOfActivity, nameOfActivity, 0));
 		return compoundedInterest;
 	}
 }

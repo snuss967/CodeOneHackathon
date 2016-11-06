@@ -8,7 +8,7 @@
 
 	<body>
 		<div class="investment-title">Investment Portfolio</div>
-		
+
 		<div class="finances">
 			{{#each investmentTypes}}
 			<label for="{{id}}">
@@ -17,12 +17,12 @@
 			</label> <br>
 			{{/each}}
 		</div>
-		
+
 		<div class="charts_container_invest">
 			{{> highchartsHelper chartId="comparisonRadarChart" chartWidth="100%" charHeight="100%" chartObject=comparisonRadarGraph}}
-		</div>		
+		</div>
 		<div class="roi-plot">
-			<ul> 
+			<ul>
 				{{#each selectedInvestmentTypes}}
 					<li>
 						<p>{{averageRateOfReturn}}%: {{name}}</p>
@@ -30,10 +30,10 @@
 				{{/each}}
 			</ul>
 		</div>
-		
+
 
 		<p class="explanation" id='invest-single-description'>{{description}}</p>
-		
+		<div class="skirt"></div>
 		<a href="https://fnni.allegiancetech.com/cgi-bin/qwebcorporate.dll?idx=G2D6KX">
 		<div class="mobile icon"></div> </a>
 		<a href="https://fnni.allegiancetech.com/cgi-bin/qwebcorporate.dll?idx=G2D6KX"><p class="contact">Contact A Financial Advisor Now</p></a>

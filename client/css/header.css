@@ -32,7 +32,8 @@ html, body {
 	height: 100%;
 	width: auto;
 	padding: 0 16px;
-	font-size: 32px;
+	font-size: 28px;
+	font-family: "Montserrat";
 	float: left;
 	transition-duration: 0.2s;
 }

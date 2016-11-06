@@ -42,7 +42,7 @@ function drawInvestmentChangeLineChart() {
 	var chart = new google.visualization.LineChart(document.getElementById('investmentChangeLineChart'));
 
 	chart.draw(data, options);
-}   
+}
 
 var getPieChartData = function() {
 	var data = new google.visualization.DataTable();
@@ -58,10 +58,10 @@ var getPieChartData = function() {
 		row[1] = profile.investments[i].values[profile.investments[i].values.length - 1];
 		data.addRow(row);
 	}
-	
+
 	return data;
 }
-  
+
 var getChangeLineChartData = function() {
 	var data = new google.visualization.DataTable();
 	data.addColumn('number', 'Year');
@@ -77,16 +77,16 @@ var getChangeLineChartData = function() {
 			totals[j] += profile.investments[i].values[j];
 		}
 	}
-		
+
 	for(var i = 0; i < totals.length; i++) {
 		var row = [];
 		row[0] = i;
 		row[1] = totals[i];
 		data.addRow(row);
 	}
-	
+
 	return data;
-	}  
+	}
 
 Template.financialSummary.helpers({
     profileName: function() {
@@ -97,30 +97,34 @@ Template.financialSummary.helpers({
 	totalValue: function() {
 		//TODO Hard code for now
 		var profile = Profiles.findOne({name: "Matthew"});
-		
+
 		var totalValue = 0;
 		for(var i = 0; i < profile.investments.length; i++) {
 			totalValue += profile.investments[i].values[profile.investments[i].values.length - 1];
 		}
+<<<<<<< HEAD
+
+=======
 		totalValue += profile.balance;
 		
+>>>>>>> f5fccab3efd2bfeba192b4d835bcd7ccd90c94c7
 		return totalValue.toLocaleString();
 	},
 	todaysChange: function() {
 		var profile = Profiles.findOne({name: "Matthew"});
-		
+
 		var totalValueToday = 0;
 		var totalValueYesterday = 0;
 		for(var i = 0; i < profile.investments.length; i++) {
 			totalValueToday += profile.investments[i].values[profile.investments[i].values.length - 1];
 			totalValueYesterday += profile.investments[i].values[profile.investments[i].values.length - 2];
 		}
-	
+
 		var percent = totalValueToday / totalValueYesterday;
 		if(percent < 1.0) {
 			percent = (-1 / percent).toFixed(2);
 		}
-		
+
 		return percent.toFixed(2);
 	}
 });
@@ -129,7 +133,7 @@ $(document).ready(function() {
   setTimeout(function() {
 		$(".total-value, .change").css({
 			"transition-duration": "1.2s",
-			"top": "320px"
+			"top": "340px"
 		});
 		$(".chart").hide().fadeIn(1500);
 		$(".total-value, .change").css({

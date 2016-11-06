@@ -16,6 +16,7 @@ body {
 }
 
 .total-value, .change {
+	border-radius: 16px;
 	position: absolute;
 	top: 500px;
 	font-size: 1.75vw;

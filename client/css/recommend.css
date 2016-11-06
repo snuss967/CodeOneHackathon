@@ -30,12 +30,39 @@ body {
    top: 275px;
 }
 
-.savings-num, .years-num {
+input[type=number] {
    outline: none;
    border: none;
-   background: white;
-   width: 108px;
+   background: transparent;
    font-size: 32px;
+}
+
+.savings-num {
+	width: 108px;
+}
+
+.years-num {
+	width: 42px;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    cursor: pointer;
+    display: block;
+    width: 8px;
+    color: #333;
+    text-align: center;
+    position: relative;
+}
+
+input[type=number]:hover::-webkit-inner-spin-button {
+    background: #eee url('') no-repeat 100% 100%;
+    width: 14px;
+    height: 14px;
+    padding: 4px;
+    position: relative;
+    right: 4px;
+    border-radius: 28px;
 }
 
 .savings-min, .savings-max {
@@ -140,22 +167,6 @@ body {
     margin-right: -50%;
     -webkit-transform: translate(-50%, -50%);
  		   transform: translate(-50%, -50%);
-}
-
-@media (max-width: 1850px) {
-	.results {
-		height: 1000px;
-	}
-
-	#resultsSubtext {
-		width: 100%;
-	}
-
-	.chart-container {
-		position: absolute;
-		top: 700px;
-		left: 0;
-	}
 }
 
 input[type=range] {

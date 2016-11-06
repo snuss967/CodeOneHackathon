@@ -42,9 +42,12 @@ body {
 .charts_container_invest {
 	position: absolute;
 	height: 400px;
-	width: 35%;
+	width: 40%;
 	top: 240px;
 	left: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	margin-right: -50%;
 	transform: translateX(-50%);
 	background-color: white;
@@ -58,7 +61,7 @@ body {
 	background-color: #063;
 	position: absolute;
 	bottom: 20px;
-	box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.5);
+	box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.6);
 }
 
 .explanation, .contact {

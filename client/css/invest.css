@@ -31,7 +31,7 @@ html, body {
 	box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.5);
 	overflow-y: scroll;
 	font-family: "Montserrat";
-	font-size: 18px;
+	font-size: 17px;
 }
 
 .finances {
@@ -78,7 +78,7 @@ html, body {
 }
 
 .explanation {
-	top: 650px;
+	top: 635px;
 	height: 150px;
 	display: flex;
 	align-items: center;

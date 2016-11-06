@@ -129,6 +129,19 @@ input[type=number] {
 	width: 600px;
 }
 
+.plug {
+	position: absolute;
+	color: white;
+	font-family: "Montserrat";
+	bottom: 16px;
+	left: 32px;
+	font-size: 21px;
+}
+
+.plug a:visited, .plug a:active, .plug a:link, .plug a:hover {
+	color: white;
+}
+
 .prospect-chart-container {
 	position: absolute;
 	right: 200px;

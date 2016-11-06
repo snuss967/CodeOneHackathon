@@ -20,8 +20,8 @@ function drawInvestmentSummaryPieChart() {
 	var data = getPieChartData();
 
 	var options = {
-		legend: { position: 'right' },
-		colors: [ '#00b2a9', '#d7c826', '#007396', '#ffaa4d', '#7c2529', '#f3dd6d' ],
+		legend: { position: 'bottom' },
+		colors: [ '#006633', '#001e0f', '#004723', '#32845b', '#99c1ad', '#197547' ],
 		backgroundColor: { fill:'transparent' }
 	};
 
@@ -148,13 +148,13 @@ Template.financialSummary.helpers({
 				percentChange = (-1.0 / percentChange);
 			}
 			percentChange--;
-			percentChange = percentChange * 100;
 
 			var color = (percentChange < 0) ? 'red' : '#063';
+			var prefix = (percentChange < 0) ? "-" : "+";
 
 			changes.push({
 				name: profile.investments[i].name,
-				percentChange: percentChange.toFixed(2),
+				percentChange: prefix + (percentChange * 100).toFixed(2),
 				color: color
 			});
 		}
@@ -187,7 +187,7 @@ Template.financialSummary.helpers({
 			comparedTo.push({
 				yearsAgo: totalValues.length - i,
 				multiplier: multiplier.toFixed(2),
-				color: (multiplier < 0) ? 'red' : 'green',
+				color: (multiplier < 0) ? 'red' : '#063',
 				preposition: (multiplier < 0) ? 'worse' : 'better'
 			});
 		}

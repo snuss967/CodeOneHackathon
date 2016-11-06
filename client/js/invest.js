@@ -446,7 +446,7 @@ Template.invest.onCreated(function() {
 		data: data,
 		pointPlacement: 'on'
 	}
-	
+
 	Session.set("data", [object]);
 	Session.set("selectedInvestmentTypes", [{
 		name: investmentTypes[0].name,
@@ -462,7 +462,7 @@ Template.invest.helpers({
 				polar: true,
 				type: 'area'
 			},
-			
+
 			plotOptions: {
 				series: {
 					animation: false
@@ -470,7 +470,7 @@ Template.invest.helpers({
 			},
 
 			title: {
-				text: 'Investment Comparison',
+				text: '',
 				x: -80
 			},
 
@@ -494,7 +494,7 @@ Template.invest.helpers({
 			tooltip: {
 				shared: true,
 			},
-			
+
 			credits: {
 				enabled: false
 			},
@@ -505,16 +505,16 @@ Template.invest.helpers({
 				y: 70,
 				layout: 'vertical'
 			},
-						
+
 			series: Session.get("data")
 		}
 	}
 });
 
 Template.invest.events({
-	'change .investmentTypesCheckbox':function(event) {		
+	'change .investmentTypesCheckbox':function(event) {
 		var inputs = document.getElementsByTagName("INPUT");
-		
+
 		//Set the description text at the bottom to the most recent item they clicked on
 		const id = event.target.id;
 		for(var i = 0; i < investmentTypes.length; i++) {
@@ -523,7 +523,7 @@ Template.invest.events({
 				break;
 			}
 		}
-		
+
 		var finalData = [];
 		var selected = [];
 		for(var i = 0; i < inputs.length; i++) {
@@ -533,7 +533,7 @@ Template.invest.events({
 					averageRateOfReturn: (investmentTypes[i].averageRateOfReturn * 100).toFixed(2),
 					description: investmentTypes[i].description
 				});
-				
+
 				var data = [];
 				data[0] = investmentTypes[i].fluidity;
 				data[1] = investmentTypes[i].security;
@@ -546,11 +546,11 @@ Template.invest.events({
 					data: data,
 					pointPlacement: 'on'
 				}
-				
-				finalData.push(object);	
+
+				finalData.push(object);
 			}
 		}
-		
+
 		Session.set("selectedInvestmentTypes", selected);
 		Session.set("data", finalData);
 	}
@@ -562,7 +562,7 @@ Template.invest.helpers({
 	},
 	selectedInvestmentTypes: function() {
 		var selectedInvestmentTypes = Session.get("selectedInvestmentTypes");
-		
+
 		return selectedInvestmentTypes;
 	},
 	equals: function(str1, str2) {

@@ -101,7 +101,7 @@ body {
 	width: 1000px;
 	height: 500px;
 	position: absolute;
-	top: 0;
+	top: -32px;
 	left: -132px;
 }
 
@@ -112,12 +112,13 @@ body {
 }
 
 .pi-info {
-	height: 190px;
-	width: 520px;
-	top: 175px;
+	height: 210px;
+	width: 500px;
+	top: 130px;
 	right: 100px;
 	border-left: 4px solid #063;
 	font-size: 24px;
+	padding: 8px;
 }
 
 .percents {
@@ -129,7 +130,7 @@ body {
 	position: absolute;
 	background-color: #063;
 	height: 4px;
-	top: 450px;
+	top: 465px;
 	width: 80%;
 	left: 50%;
 	margin-right: -50%;
@@ -137,20 +138,21 @@ body {
 }
 
 .line-info {
-	height: 225px;
-	width: 450px;
-	bottom: 150px;
-	left: 64px;
+	height: 275px;
+	width: 530px;
+	bottom: 100px;
+	left: 96px;
 	padding: 12px;
 	border-right: 4px solid #063;
+	font-size: 24px;
 }
 
 #investmentChangeLineChart {
 	position: absolute;
-	width: 600px;
+	width: 725px;
 	height: 500px;
 	bottom: 0;
-	right: 325px;
+	right: -50px;
 }
 
 .menu.icon {

@@ -17,7 +17,7 @@ html, body {
 
 .dream-title {
 	position: absolute;
-	top: 64px;
+	top: 40px;
 	font-size: 320px;
 	width: 100vw;
 	text-align: center;
@@ -31,7 +31,7 @@ html, body {
    left: 9%;
    font-size: 42px;
    font-family: 'Montserrat';
-   top: 395px;
+   top: 385px;
    color: white;
    text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
 }
@@ -90,7 +90,7 @@ html, body {
 .get-there {
 	position: absolute;
 	top: 100vh;
-	height: 400px;
+	height: 600px;
 	width: 100vw;
 	font-size: 48px;
 	font-family: "Montserrat";
@@ -101,9 +101,9 @@ html, body {
 
 .rule {
 	position: absolute;
-	height: 2px;
-	width: 100px;
-	top: 1350px;
+	height: 3px;
+	width: 200px;
+	top: 1550px;
 	left: 50%;
 	margin-right: -50%;
 	transform: translateX(-50%);
@@ -112,7 +112,7 @@ html, body {
 
 .pricing {
 	position: absolute;
-	top: 1500px;
+	top: 1700px;
 	left: 50%;
 	margin-right: -50%;
 	transform: translateX(-50%);
@@ -128,7 +128,7 @@ html, body {
 
 .dream-savings-title {
 	position: absolute;
-	top: 1600px;
+	top: 1800px;
 	left: 15%;
 	font-size: 32px;
     font-family: 'Montserrat';
@@ -141,7 +141,7 @@ html, body {
 
 .dream-savings {
 	position: absolute;
-	top: 1675px;
+	top: 1875px;
 	left: 50%;
 	margin-right: -50%;
 	transform: translateX(-50%);
@@ -229,7 +229,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 .savings-chart-container {
    position: absolute;
-   top: 1750px;
+   top: 1950px;
    height: 550px;
    width: 75%;
    left: 50%;
@@ -253,7 +253,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 .feedback {
 	position: absolute;
-	top: 2400px;
+	top: 2600px;
 	width: 80%;
 	min-height: 24px;
 	background-color: white;

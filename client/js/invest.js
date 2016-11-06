@@ -564,5 +564,11 @@ Template.invest.helpers({
 		var selectedInvestmentTypes = Session.get("selectedInvestmentTypes");
 		
 		return selectedInvestmentTypes;
+	},
+	equals: function(str1, str2) {
+		return str1 === str2;
+	},
+	description: function() {
+		return investmentTypes[0].description;
 	}
 });

@@ -12,7 +12,12 @@
 		<div class="finances">
 			{{#each investmentTypes}}
 			<label for="{{id}}">
-				<input type="checkbox" class="investmentTypesCheckbox" id="{{id}}"/>
+				{{#if equals id "moneyMarkets"}}
+					<input type="checkbox" class="investmentTypesCheckbox" id="{{id}}" checked/>
+				{{else}}
+					<input type="checkbox" class="investmentTypesCheckbox" id="{{id}}"/>
+				{{/if}}
+				
 				{{name}}
 			</label> <br>
 			{{/each}}

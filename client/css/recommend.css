@@ -39,10 +39,12 @@ input[type=number] {
 
 .savings-num {
 	width: 108px;
+	font-family: "Montserrat";
 }
 
 .years-num {
 	width: 42px;
+	font-family: "Montserrat";
 }
 
 input[type=number]::-webkit-inner-spin-button {
@@ -56,9 +58,10 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 input[type=number]:hover::-webkit-inner-spin-button {
-    background: #eee url('') no-repeat 100% 100%;
-    width: 14px;
-    height: 14px;
+    background: url("../../public/NumberSelectArrows.png") no-repeat 100% 100%;
+    width: 140px;
+    height: 280px;
+	border: 2px solid red;
     padding: 4px;
     position: relative;
     right: 4px;

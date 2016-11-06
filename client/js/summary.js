@@ -35,7 +35,16 @@ function drawInvestmentChangeLineChart() {
 
 	var options = {
 		legend: { position: 'left' },
-		backgroundColor: { fill:'transparent' }
+		backgroundColor: { fill:'transparent' },
+		vAxis: {
+			title: 'Money Earned',
+			format: 'currency',
+			minValue: 0,
+		},
+		hAxis: {
+			title: 'Years',
+			minValue: 0,
+		}
 	};
 
 	var chart = new google.visualization.LineChart(document.getElementById('investmentChangeLineChart'));
@@ -141,7 +150,7 @@ Template.financialSummary.helpers({
 			percentChange--;
 			percentChange = percentChange * 100;
 
-			var color = (percentChange < 0) ? 'red' : 'green';
+			var color = (percentChange < 0) ? 'red' : '#063';
 
 			changes.push({
 				name: profile.investments[i].name,

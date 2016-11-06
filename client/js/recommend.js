@@ -22,7 +22,7 @@ function drawRecommendedInvestmentChart() {
 var getCompoundInterestAndSetMessage = function(numberOfYears, annualAddition) {
 	if(numberOfYears == 0 || annualAddition == 0)
 	{
-		$('.advice-content').html(""); 
+		$('.advice-content').html("");
 		$('.plan').html("");
 		return 0;
 	}

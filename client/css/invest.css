@@ -28,11 +28,11 @@ body {
 	background-color: white;
 	padding: 8px;
 	box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.5);
+	overflow-y: scroll;
 }
 
 .finances {
 	left: 7%;
-	overflow-y: scroll;
 }
 
 .roi-plot {
@@ -85,6 +85,10 @@ body {
 	font-size: 28px;
 }
 
+.contact:hover {
+	cursor: pointer;
+}
+
 .chart-invest {
 	width: 300px;
 	height: 500px;
@@ -123,4 +127,8 @@ body {
 	width: 3px;
 	border-radius: 50%;
 	background-color: #063;
+}
+
+.mobile.icon:hover {
+	cursor: pointer;
 }

@@ -1,10 +1,24 @@
-	
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+.full-page-splash {
+	position: absolute;
+	top: 96px;
+	height: calc(100vh - 96px);
+	width: 100vw;
+	background: url("/res/AdobeStock_81689172.jpeg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
 .dream-title {
    text-align: center;
    position: absolute;
    top: 128px;
    font-size: 96px;
-   left: 50%;	
+   left: 50%;
    font-family: "DecourW00-Black";
    -webkit-transform: translateX(-50%);
 		   transform: translateX(-50%);
@@ -15,7 +29,7 @@
    position: absolute;
    top: 1000px;
    font-size: 60px;
-   left: 20%;	
+   left: 20%;
    font-family: "DecourW00-Black";
 }
 
@@ -89,6 +103,8 @@
    font-size: 20px;
    top: 1400px;
 }
+<<<<<<< HEAD
+=======
 .savings-chart-container {
    position: absolute;
    right: 375px;
@@ -119,4 +135,3 @@
    top: 1600px;
    width: 70%;
 }
-

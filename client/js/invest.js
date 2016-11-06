@@ -434,7 +434,8 @@ const investmentTypes = [
 ];
 
 Template.invest.onCreated(function() {
-	Session.set("data", [1.2, 3.4, 4.5, 2.1, 2.2]);
+	Session.set("data", []);
+	Session.set("selectedInvestmentTypes", []);
 });
 
 Template.invest.helpers({
@@ -469,7 +470,8 @@ Template.invest.helpers({
 			yAxis: {
 				gridLineInterpolation: 'polygon',
 				lineWidth: 0,
-				min: 0
+				min: 0,
+				max: 5.0
 			},
 
 			tooltip: {
@@ -496,19 +498,33 @@ Template.invest.helpers({
 Template.invest.events({
 	'change .investmentTypesCheckbox':function(event) {		
 		var inputs = document.getElementsByTagName("INPUT");
+		
+		//Set the description text at the bottom to the most recent item they clicked on
+		const id = event.target.id;
+		for(var i = 0; i < investmentTypes.length; i++) {
+			if(investmentTypes[i].id === id) {
+				document.getElementById('invest-single-description').innerHTML = investmentTypes[i].description;
+				break;
+			}
+		}
+		
 		var finalData = [];
-		var numberChecked = 0;
-		var indexChecked = 0;
+		var selected = [];
 		for(var i = 0; i < inputs.length; i++) {
 			if(inputs[i].type === 'checkbox' && inputs[i].checked) {
+				selected.push({
+					name: investmentTypes[i].name,
+					averageRateOfReturn: (investmentTypes[i].averageRateOfReturn * 100).toFixed(2),
+					description: investmentTypes[i].description
+				});
+				
 				var data = [];
 				data[0] = investmentTypes[i].fluidity;
 				data[1] = investmentTypes[i].security;
 				data[2] = investmentTypes[i].rateOfReturn;
 				data[3] = investmentTypes[i].accessiblity;
 				data[4] = investmentTypes[i].manageability;
-				numberChecked++;
-				indexChecked = i;
+
 				var object = {
 					name: investmentTypes[i].name,
 					data: data,
@@ -518,18 +534,8 @@ Template.invest.events({
 				finalData.push(object);	
 			}
 		}
-		if(numberChecked == 1)
-		{
-			$('#explanationToChangeInvest').html(investmentTypes[indexChecked].description);
-			//fill the text with information on the one investment
-		}
-		else
-		{
-			$('#explanationToChangeInvest').html("");
-			//set the text null
-		}
-
 		
+		Session.set("selectedInvestmentTypes", selected);
 		Session.set("data", finalData);
 	}
 });
@@ -537,5 +543,10 @@ Template.invest.events({
 Template.invest.helpers({
 	investmentTypes: function() {
 		return investmentTypes;
+	},
+	selectedInvestmentTypes: function() {
+		var selectedInvestmentTypes = Session.get("selectedInvestmentTypes");
+		
+		return selectedInvestmentTypes;
 	}
 });

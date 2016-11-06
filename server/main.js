@@ -30,7 +30,7 @@ Meteor.startup(() => {
 		
 		values = [1000, 2000, 3000, 5000, 7500, 11000, 15250, 22500, 34500, 47250, 58250, 69000];
 		Investments.insert({
-			name: "ETF",
+			name: "Securities",
 			rateOfReturn: 1.5,
 			description: "A ETF is ...[INSERT REAL DESCRIPTION HERE]...",
 			values: values
@@ -38,7 +38,7 @@ Meteor.startup(() => {
 		
 		values = [1000, 2000, 10000, 4500, 11000, 3000, 25000, 15000, 9500, 2000, 13500, 14000];
 		Investments.insert({
-			name: "Hedge Fund",
+			name: "Mutual Funds",
 			rateOfReturn: 5.0,
 			description: "A Hedge fund is ...[INSERT REAL DESCRIPTION HERE]...",
 			values: values
@@ -54,7 +54,7 @@ Meteor.startup(() => {
 		
 		values = [1000, 2000, 3500, 4500, 2000, 9000, 11750, 15500, 20000, 23500, 19000, 27500];
 		Investments.insert({
-			name: "Some other investment option",
+			name: "Certificates of Deposits",
 			rateOfReturn: 2.5,
 			description: "A some other investment option is...[INSERT REAL DESCRIPTION HERE]...",
 			values: values

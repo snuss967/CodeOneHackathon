@@ -1,0 +1,132 @@
+@import url(//db.onlinewebfonts.com/c/d641cb7d417e11a5c131089b15fca554?family=DecourW00-Black);
+
+body {
+	background-color: #f1f1f1;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.title {
+	text-align: center;
+	position: absolute;
+	top: 140px;
+	font-size: 96px;
+	left: 50%;
+	margin-right: -50%;
+	font-family: "DecourW00-Black";
+	-webkit-transform: translateX(-50%);
+	        transform: translateX(-50%);
+}
+
+.total-value, .change {
+	border-radius: 16px;
+	position: absolute;
+	top: 340px;
+	font-size: 1.75vw;
+	height: 300px;
+	width: 25%;
+	text-align: center;
+	padding: 25px;
+	color: white;
+	box-sizing: border-box;
+	background-color: #006633;
+	font-family: "DecourW00-Black";
+	box-shadow: 0 0 16px 2px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 1800px) {
+	#investmentSummaryPieChart {
+		width: 500px;
+		height: 250px;
+	}
+
+	#investmentChangeLineChart {
+		width: 500px;
+		height: 250px;
+	}
+}
+
+@media (max-width: 950px) {
+	.title {
+		font-size: 72px;
+		top: 160px;
+	}
+
+	#investmentSummaryPieChart, #investmentChangeLineChart {
+		display: none;
+	}
+}
+
+@media (max-width: 700px) {
+	.title {
+		top: 120px;
+		width: 400px;
+	}
+}
+
+.total-value {
+	left: 21%;
+}
+
+.change {
+	right: 21%;
+}
+
+.charts-container {
+	position: absolute;
+	height: 1050px;
+	width: 70%;
+	top: 432px;
+	left: 50%;
+	margin-right: -50%;
+	-webkit-transform: translateX(-50%);
+	        transform: translateX(-50%);
+	background-color: white;
+	box-shadow: 0 0 32px 0 rgba(0, 0, 0, 0.7);
+	margin-bottom: 128px;
+}
+
+#investmentSummaryPieChart {
+	width: 1000px;
+	height: 500px;
+	display: inline-block;
+}
+
+#investmentChangeLineChart {
+	float: right;
+	display: inline-block;
+	width: 1000px;
+	height: 500px;
+}
+
+.menu.icon {
+  color: #000;
+  position: absolute;
+  margin-left: 2px;
+  width: 24px;
+  height: 3px;
+  background-color: white;
+}
+
+.menu.icon:before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 0;
+  width: 24px;
+  height: 3px;
+  background-color: white;
+}
+
+.menu.icon:after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 0;
+  width: 24px;
+  height: 3px;
+  background-color: white;
+}

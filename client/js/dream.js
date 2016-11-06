@@ -22,12 +22,10 @@ function drawRecommendedSavingsChart() {
 				title: 'Money Earned',
 				format: 'currency',
 				minValue: 0,
-				maxValue: maxYValue,
 			},
 			hAxis: {
 				title: '# Weeks',
 				minValue: 0,
-				maxValue: maxXValue
 			}
 		};
 	} else
@@ -39,12 +37,10 @@ function drawRecommendedSavingsChart() {
 				title: 'Money Earned',
 				format: 'currency',
 				minValue: 0,
-				maxValue: maxYValue
 			},
 			hAxis: {
 				title: '# Years',
 				minValue: 0,
-				maxValue: maxXValue
 			}
 		};
 	}

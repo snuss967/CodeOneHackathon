@@ -39,7 +39,7 @@ function drawRecommendedSavingsChart() {
 				minValue: 0,
 			},
 			hAxis: {
-				title: '# Years',
+				title: 'Years',
 				minValue: 0,
 			}
 		};

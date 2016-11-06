@@ -35,7 +35,16 @@ function drawInvestmentChangeLineChart() {
 
 	var options = {
 		legend: { position: 'left' },
-		backgroundColor: { fill:'transparent' }
+		backgroundColor: { fill:'transparent' },
+			vAxis: {
+				title: 'Money Earned',
+				format: 'currency',
+				minValue: 0,
+			},
+			hAxis: {
+				title: 'Years',
+				minValue: 0,
+			}
 	};
 
 	var chart = new google.visualization.LineChart(document.getElementById('investmentChangeLineChart'));

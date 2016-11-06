@@ -163,8 +163,23 @@ body {
 	font-family: 'Montserrat';
 }
 
+#resultsSubtext {
+	width: 40%;
+	font-family: 'Montserrat';
+	font-size: 1.5em;
+	top: 500px;
+}
+
 .results p {
 	float: left;
+}
+
+#resultsTitle {
+	width: 40%;
+	text-align: center;
+	font-family: 'Montserrat';
+	font-size: 35px;
+	top: 510px;
 }
 
 .chart-container {

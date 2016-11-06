@@ -104,7 +104,7 @@ Template.financialSummary.helpers({
 		}
 
 		totalValue += profile.balance;
-		
+
 		return totalValue.toLocaleString();
 	},
 	todaysChange: function() {

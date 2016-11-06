@@ -434,8 +434,25 @@ const investmentTypes = [
 ];
 
 Template.invest.onCreated(function() {
-	Session.set("data", []);
-	Session.set("selectedInvestmentTypes", []);
+	var data = [];
+	data[0] = investmentTypes[0].fluidity;
+	data[1] = investmentTypes[0].security;
+	data[2] = investmentTypes[0].rateOfReturn;
+	data[3] = investmentTypes[0].accessiblity;
+	data[4] = investmentTypes[0].manageability;
+
+	var object = {
+		name: investmentTypes[0].name,
+		data: data,
+		pointPlacement: 'on'
+	}
+	
+	Session.set("data", [object]);
+	Session.set("selectedInvestmentTypes", [{
+		name: investmentTypes[0].name,
+		averageRateOfReturn: (investmentTypes[0].averageRateOfReturn * 100).toFixed(2),
+		description: investmentTypes[0].description
+	}]);
 });
 
 Template.invest.helpers({
@@ -493,7 +510,6 @@ Template.invest.helpers({
 		}
 	}
 });
-
 
 Template.invest.events({
 	'change .investmentTypesCheckbox':function(event) {		

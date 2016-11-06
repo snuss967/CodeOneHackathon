@@ -2,6 +2,8 @@ google.charts.load('current', {'packages':['corechart']});
 google.charts.setOnLoadCallback(drawCharts);
 
 var weeksYears = 0;
+var maxYValue = 10000;
+var maxXValue = 70;
 
 //Draws all the charts to the screen
 function drawCharts() {
@@ -10,21 +12,40 @@ function drawCharts() {
 
 function drawRecommendedSavingsChart() {
 	var data = generateRecommendedSavingsChartData();
+	
 	if(weeksYears == 0)
 	{
 		var options = {
 			legend: { position: 'left' },
 			backgroundColor: { fill:'transparent' },
-			vAxis: {title: 'How Much $ Earned'},
-			hAxis: {title: '# Weeks'}
+			vAxis: {
+				title: 'Money Earned',
+				format: 'currency',
+				minValue: 0,
+				maxValue: maxYValue,
+			},
+			hAxis: {
+				title: '# Weeks',
+				minValue: 0,
+				maxValue: maxXValue
+			}
 		};
 	} else
 	{
 		var options = {
 			legend: { position: 'left' },
 			backgroundColor: { fill:'transparent' },
-			vAxis: {title: 'How Much $ Earned'},
-			hAxis: {title: '# Years'}
+			vAxis: {
+				title: 'Money Earned',
+				format: 'currency',
+				minValue: 0,
+				maxValue: maxYValue
+			},
+			hAxis: {
+				title: '# Years',
+				minValue: 0,
+				maxValue: maxXValue
+			}
 		};
 	}
 
@@ -116,32 +137,50 @@ var generateResponseText = function(lengthOfTimeNoInvestment, lengthOfTimeInvest
 
 //Generates the data by using the compound interested with additions formula
 var generateRecommendedSavingsChartData = function() {
-	var totalCostOfActivity  = parseInt($('.howMuch-text').val());
-	var nameOfActivity= $('.what-text').val();
+	var totalCostOfActivity  = parseInt($('.price').val());
+	maxYValue = totalCostOfActivity;
+	var nameOfActivity= $('.dream').val();
 	var weeklyAddition = parseInt($('.dream-savings-num').val());
 	var annualAddition = weeklyAddition * 52;
 	var numberOfWeeks = (totalCostOfActivity/weeklyAddition);
 	var numberOfYears = (numberOfWeeks / 52);
+	
+	var compoundedInterest = new google.visualization.DataTable();
+	compoundedInterest.addColumn('number', 'Year');
+	compoundedInterest.addColumn('number', 'Final Value');
+	compoundedInterest.addColumn('number', 'Goal');
+		
+	if(!isFinite(numberOfWeeks)) {
+		return compoundedInterest;
+	}
+	
 	var p = annualAddition;
 
+	console.log("TOTAL COST: " + totalCostOfActivity);
+	console.log("WEEKLY ADDITION: " + weeklyAddition);
+	console.log("ANNUAL ADDITION: " + annualAddition);
+	console.log("NUMBER OF WEEKS: " + numberOfWeeks);
+	console.log("NUMBER OF YEARS: " + numberOfYears);
+	
 	var r = getInterestRateInvestmentMethod(numberOfYears, annualAddition);
+	console.log("R: " + r);
 
 	//The compounded interests from year 0 to year [numberOfYears]
 	if(r != 0)
 	{
 		weeksYears = 1;
-		var compoundedInterest = new google.visualization.DataTable();
-		compoundedInterest.addColumn('number', 'Year');
-		compoundedInterest.addColumn('number', 'Final Value');
+		maxXValue = numberOfYears;
 
 		var row = [];
 		row[0] = 0;
 		row[1] = annualAddition;
+		row[2] = totalCostOfActivity;
 		compoundedInterest.addRow(row);
 
 		for(var n = 1; n < numberOfYears; n++) {
 			row[0] = n;
 			row[1] = p * Math.pow(1 + r, n) + annualAddition * ((Math.pow(1 + r, n + 1) - (1 + r)) / r);
+			row[2] = totalCostOfActivity;
 
 			compoundedInterest.addRow(row);
 		}
@@ -150,20 +189,26 @@ var generateRecommendedSavingsChartData = function() {
 	}
 	else
 	{
+		if(!isFinite(numberOfWeeks)) {
+			return compoundedInterest;
+		}
+		
 		weeksYears = 0;
-		var compoundedInterest = new google.visualization.DataTable();
-		compoundedInterest.addColumn('number', 'Week');
-		compoundedInterest.addColumn('number', 'Final Value');
+		maxXValue = numberOfWeeks;
+
 		var total = weeklyAddition;
 		var row = [];
 		row[0] = 0;
 		row[1] = total;
+		row[2] = totalCostOfActivity;
 
 		compoundedInterest.addRow(row);
 		for(var n = 1; n < numberOfWeeks; n++) {
 			row[0] = n;
 			total += weeklyAddition;
 			row[1] = total;
+			row[2] = totalCostOfActivity;
+
 			compoundedInterest.addRow(row);
 		}
 

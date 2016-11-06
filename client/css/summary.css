@@ -183,3 +183,13 @@ body {
   height: 3px;
   background-color: white;
 }
+
+.floor-logo {
+	position: absolute;
+	left: 50%;
+	margin-right: -50%;
+	transform: translateX(-50%);
+	top: 1425px;
+	height: 48px;
+	width: auto;
+}

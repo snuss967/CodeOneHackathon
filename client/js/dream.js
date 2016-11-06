@@ -12,7 +12,7 @@ function drawCharts() {
 
 function drawRecommendedSavingsChart() {
 	var data = generateRecommendedSavingsChartData();
-	
+
 	if(weeksYears == 0)
 	{
 		var options = {
@@ -142,7 +142,7 @@ var generateResponseText = function(lengthOfTimeNoInvestment, lengthOfTimeInvest
 var calculateNumberOfYears = function(futureValue, interestRate, principal)
 {
 	var years = Math.log(1 + ((futureValue * interestRate)/principal))/(Math.log(1 + interestRate));
-	return years;
+	return years - 1;
 }
 
 //Generates the data by using the compound interested with additions formula
@@ -154,16 +154,16 @@ var generateRecommendedSavingsChartData = function() {
 	var annualAddition = weeklyAddition * 52;
 	var numberOfWeeks = (totalCostOfActivity/weeklyAddition);
 	var numberOfYears = (numberOfWeeks / 52);
-	
+
 	var compoundedInterest = new google.visualization.DataTable();
 	compoundedInterest.addColumn('number', 'Year');
 	compoundedInterest.addColumn('number', 'Final Value');
 	compoundedInterest.addColumn('number', 'Goal');
-		
+
 	if(!isFinite(numberOfWeeks)) {
 		return compoundedInterest;
 	}
-	
+
 	var p = annualAddition;
 
 	console.log("TOTAL COST: " + totalCostOfActivity);
@@ -171,7 +171,7 @@ var generateRecommendedSavingsChartData = function() {
 	console.log("ANNUAL ADDITION: " + annualAddition);
 	console.log("NUMBER OF WEEKS: " + numberOfWeeks);
 	console.log("NUMBER OF YEARS: " + numberOfYears);
-	
+
 	var r = getInterestRateInvestmentMethodDream(numberOfYears, annualAddition);
 	console.log("R: " + r);
 
@@ -202,7 +202,7 @@ var generateRecommendedSavingsChartData = function() {
 		if(!isFinite(numberOfWeeks)) {
 			return compoundedInterest;
 		}
-		
+
 		weeksYears = 0;
 		maxXValue = numberOfWeeks;
 
@@ -230,6 +230,15 @@ $(document).ready(function() {
 	setTimeout(function() {
 		$('.dream-savings').change(function() {
 			$('.dream-savings-num').val($(this).val());
+			drawCharts();
+		});
+
+		$('.dream-savings-num').change(function() {
+			$('.dream-savings').val($(this).val());
+			drawCharts();
+		});
+
+		$('.price').change(function() {
 			drawCharts();
 		});
 	}, 50);

@@ -63,7 +63,7 @@ html, body {
 	z-index: -2;
 	background-color: #063;
 	position: absolute;
-	bottom: 20px;
+	top: 820px;
 	box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.6);
 }
 

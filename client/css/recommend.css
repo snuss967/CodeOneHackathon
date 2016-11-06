@@ -43,7 +43,7 @@ input[type=number] {
 }
 
 .years-num {
-	width: 56px;
+	width: 66px;
 	font-family: "Montserrat";
 }
 
@@ -135,7 +135,7 @@ input[type=number] {
 	font-family: "Montserrat";
 	bottom: 16px;
 	left: 32px;
-	font-size: 21px;
+	font-size: 19px;
 }
 
 .plug a:visited, .plug a:active, .plug a:link, .plug a:hover {

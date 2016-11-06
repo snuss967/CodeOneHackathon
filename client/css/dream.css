@@ -102,7 +102,7 @@ html, body {
 .rule {
 	position: absolute;
 	height: 3px;
-	width: 200px;
+	width: 80%;
 	top: 1550px;
 	left: 50%;
 	margin-right: -50%;
@@ -237,7 +237,7 @@ input[type=range]:focus::-ms-fill-upper {
    transform: translateX(-50%);
    background-color: white;
    box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
-   margin-bottom: 128px;
+   margin-bottom: 32px;
 }
 
 .savings-chart {
@@ -264,10 +264,6 @@ input[type=range]:focus::-ms-fill-upper {
 	margin-bottom: 128px;
 	font-family: 'Montserrat';
 	font-size: 20px;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	padding-left: 5px;
-	padding-right: 5px;
+	padding: 32px 16px;
 	text-align: center;
-
 }

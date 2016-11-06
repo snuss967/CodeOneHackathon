@@ -141,7 +141,7 @@ Template.financialSummary.helpers({
 			percentChange--;
 			percentChange = percentChange * 100;
 
-			var color = (percentChange < 0) ? 'red' : 'green';
+			var color = (percentChange < 0) ? 'red' : '#063';
 
 			changes.push({
 				name: profile.investments[i].name,

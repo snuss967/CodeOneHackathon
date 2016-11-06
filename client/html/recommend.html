@@ -3,7 +3,7 @@
 		<title>Financial Recommendations</title>
 	</head>
 	<body>
-		<div class="recommend-title">Financial Recommendations</div>
+		<div class="recommend-title">Financial Advice</div>
 
 		<div class="savings-title">Savings: $<input type="number" class="savings-num" min="0" max="10000"> per year</div>
 		<label class='savings-min'>0</label>
@@ -15,15 +15,14 @@
 		<input type="range" class="years" value="0" min="0" max="70">
 		<label class='years-max'>70</label>
 
-		<div class="results">
-			<h2 style="font-size: 2.5em">We Recommend Using:</h2>
-			<h3 id="resultsTitle"></h3>
-			<p id="resultsSubtext"></p>
-			<div class="chart-container">
-				<div id="recommendedInvestmentChart" class="chart"></div>
-			</div>
+		<div class='results-banner'>
+			<div class='advice'>We Recommend Using:</div>
+			<div class='plan'></div>
+			<p class='advice-content'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 		</div>
-
+		<div class='prospect-chart-container'>
+			<div id="recommendedInvestmentChart" class="prospect-chart"></div>
+		</div>
 		<script type="text/javascript" src="../js/recommend.js"></script>
 	</body>
 </template>

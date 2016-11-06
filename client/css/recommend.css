@@ -88,67 +88,58 @@ body {
    width: 80%;
 }
 
-@media (max-width: 1800px) {
-   .recommend-title {
-	   top: 148px;
-	   font-size: 72px;
-   }
-
-   .savings-min, .savings-max, .years-min, .years-max {
-	   display: none;
-   }
+.results-banner {
+	background-color: #063;
+	height: 400px;
+	width: 100%;
+	position: absolute;
+	left: 225px;
+	top: 550px;
+	color: white;
+	border-radius: 24px;
+	box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
+	padding: 32px;
 }
 
-.results {
-   position: absolute;
-   text-align: left;
-   top: 450px;
-   left: 50%;
-   margin-right: -50%;
-   -webkit-transform: translateX(-50%);
-		   transform: translateX(-50%);
-   height: 500px;
-   width: 80%;
-   margin-bottom: 64px;
-   padding: 4px;
-   font-family: 'DecourW00-Black';
+.advice {
+	padding: 0;
+	margin: 0;
+	font-size: 36px;
+	font-family: "DecourW00-Black";
 }
 
-#resultsSubtext {
-   width: 60%;
-   font-family: 'Montserrat';
-   font-size: 1.5em;
-   top: 500px;
+.plan {
+	font-style: italic;
+	font-size: 36px;
+	font-family: "DecourW00-Black";
 }
 
-#resultsTitle {
-   text-align: left;
-   font-family: 'DecourW00-Black';
-   font-size: 35px;
-   top: 510px;
+.advice-content {
+	font-size: 18px;
+	font-family: "Montserrat";
+	width: 600px;
 }
 
-.chart-container {
-   position: absolute;
-   top: 12px;
-   right: 24px;
-   height: 600px;
-   width: 550px;
-   background-color: white;
-   box-shadow: 0 0 32px 0 rgba(0, 0, 0, 0.7);
+.prospect-chart-container {
+	position: absolute;
+	right: 200px;
+	top: 500px;
+	height: 550px;
+	width: 700px;
+	background-color: white;
+	box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
+	margin-bottom: 64px;
 }
 
-.chart {
-   position: absolute;
-   margin: 16px 0 0 56px;
-   height: 100%;
-   width: 100%;
-   left: 50%;
-   top: 50%;
-   margin-right: -50%;
-   -webkit-transform: translate(-50%, -50%);
-		   transform: translate(-50%, -50%);
-   display: inline-block;
+.prospect-chart {
+	position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    margin-right: -50%;
+    -webkit-transform: translate(-50%, -50%);
+ 		   transform: translate(-50%, -50%);
 }
 
 @media (max-width: 1850px) {
@@ -165,74 +156,6 @@ body {
 		top: 700px;
 		left: 0;
 	}
-}
-
-@media (max-width: 1000px) {
-   .recommend-title {
-	   top: 116px;
-	   width: 700px;
-   }
-
-   #resultsSubtext {
-	   font-size: 24px;
-   }
-
-   .savings-title {
-	   top: 305px;
-   }
-
-   .savings-min, .savings-max {
-	   top: 351px;
-   }
-
-   .savings {
-	   top: 345px;
-   }
-
-   .years-title {
-	   top: 400px;
-   }
-
-   .years-min, .years-max {
-	   top: 442px;
-   }
-
-   .years {
-	   top: 435px;
-   }
-}
-
-@media (max-width: 700px) {
-   .recommend-title {
-	   font-size: 54px;
-   }
-
-   .savings-title, .years-title, .years-num, .savings-num {
-	   font-size: 24px;
-   }
-}
-
-@media (max-width: 500px) {
-   .recommend-title {
-	   font-size: 42px;
-	   width: 500px;
-   }
-
-   .savings-title, .savings-num, .years-title, .years-num {
-	   font-size: 18px;
-   }
-
-   .results h2 {
-	   font-size: 28px;
-   }
-
-   #resultsTitle {
-	   font-size: 28px;
-   }
-
-   #resultsSubtext {
-	   font-size: 20px;
-   }
 }
 
 input[type=range] {

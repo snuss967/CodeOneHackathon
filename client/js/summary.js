@@ -125,18 +125,3 @@ Template.financialSummary.helpers({
 		return percent.toFixed(2);
 	}
 });
-
-$(document).ready(function() {
-  setTimeout(function() {
-		$(".total-value, .change").css({
-			"-webkit-transition-duration": "1.2s",
-			"transition-duration": "1.2s",
-			"top": "340px"
-		});
-		$(".chart").hide().fadeIn(1500);
-		$(".total-value, .change").css({
-			"transition-duration": "0s",
-			"-webkit-transition-duration": "0s"
-		});
-	}, 50);
-});

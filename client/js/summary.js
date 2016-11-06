@@ -102,12 +102,7 @@ Template.financialSummary.helpers({
 		for(var i = 0; i < profile.investments.length; i++) {
 			totalValue += profile.investments[i].values[profile.investments[i].values.length - 1];
 		}
-<<<<<<< HEAD
-
-=======
 		totalValue += profile.balance;
-		
->>>>>>> f5fccab3efd2bfeba192b4d835bcd7ccd90c94c7
 		return totalValue.toLocaleString();
 	},
 	todaysChange: function() {

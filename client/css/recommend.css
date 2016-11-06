@@ -166,15 +166,16 @@ body {
 #resultsSubtext {
 	width: 40%;
 	font-family: 'Montserrat';
-	font-size: 30px;
-	top: 530px;
+	font-size: 1.5em;
+	top: 500px;
+}
 
 .results p {
 	float: left;
 }
 
 #resultsTitle {
-	width: 33	%;
+	width: 40%;
 	text-align: center;
 	font-family: 'Montserrat';
 	font-size: 35px;

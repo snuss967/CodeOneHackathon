@@ -1,3 +1,12 @@
+body {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
 .investment_header_text {
 	font-family: 'Montserrat';
 	padding-top: 100px;
@@ -47,4 +56,3 @@
 	width: 300px;
 	height: 500px;
 }
-

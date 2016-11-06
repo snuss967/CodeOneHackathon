@@ -9,7 +9,6 @@ Template.financialSummary.onCreated(function() {
 });
 
 google.charts.load('current', {'packages':['corechart']});
-google.charts.setOnLoadCallback(drawCharts);
 
 //Draws all the charts to the screen
 function drawCharts() {
@@ -51,7 +50,7 @@ var getPieChartData = function() {
 
 	//TODO Hard code for now
 	var profile = Profiles.findOne({name: "Matthew"});
-
+	
 	for(var i = 0; i < profile.investments.length; i++) {
 		var row = [];
 		row[0] = profile.investments[i].name;

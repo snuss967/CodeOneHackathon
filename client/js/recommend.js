@@ -7,16 +7,16 @@ function drawCharts() {
 }
 
 function drawRecommendedInvestmentChart() {
-	var data = generateRecommendedInvestmentChartData();
+	//var data = generateRecommendedInvestmentChartData();
 
-	var options = {
-		legend: { position: 'left' },
-		backgroundColor: { fill:'transparent' }
-	};
+	//var options = {
+//		legend: { position: 'left' },
+//		backgroundColor: { fill:'transparent' }
+//	};
 
-	var chart = new google.visualization.LineChart(document.getElementById('recommendedInvestmentChart'));
+	//var chart = new google.visualization.LineChart(document.getElementById('recommendedInvestmentChart'));
 
-	chart.draw(data, options);
+	//chart.draw(data, options);
 }
 
 var getCompoundInterestAndSetMessage = function(numberOfYears, annualAddition) {
@@ -116,7 +116,6 @@ var generateRecommendedInvestmentChartData = function() {
 	var annualAddition = parseInt($('.savings-num').val());
 	var p = annualAddition;
 	
-	//TODO CHANGE ONCE SPENCER GETS THE CONDITIONALS DONE
 	var r = getCompoundInterestAndSetMessage(numberOfYears, annualAddition);
 	
 	//The compounded interests from year 0 to year [numberOfYears]

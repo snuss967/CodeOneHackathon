@@ -1,3 +1,5 @@
+import { Session } from 'meteor/session';
+
 const investmentTypes = [
 {
 	name: "Money Markets",
@@ -430,6 +432,95 @@ const investmentTypes = [
 	manageability: 4.8
 }
 ];
+
+Template.invest.onCreated(function() {
+	Session.set("data", [1.2, 3.4, 4.5, 2.1, 2.2]);
+});
+
+Template.invest.helpers({
+	comparisonRadarGraph: function() {
+		return {
+			chart: {
+				polar: true,
+				type: 'area'
+			},
+			
+			plotOptions: {
+				series: {
+					animation: false
+				}
+			},
+
+			title: {
+				text: 'Investment Comparison',
+				x: -80
+			},
+
+			pane: {
+				size: '80%'
+			},
+
+			xAxis: {
+				categories: ['Fluidity', 'Security', 'Rate Of Return', 'Accessiblity', 'Manageability'],
+				tickmarkPlacement: 'on',
+				lineWidth: 0
+			},
+
+			yAxis: {
+				gridLineInterpolation: 'polygon',
+				lineWidth: 0,
+				min: 0
+			},
+
+			tooltip: {
+				shared: true,
+				pointFormat: '<span style="color:{series.color}">{series.name}: <b>${point.y:,.0f}</b><br/>'
+			},
+			
+			credits: {
+				enabled: false
+			},
+
+			legend: {
+				align: 'right',
+				verticalAlign: 'top',
+				y: 70,
+				layout: 'vertical'
+			},
+						
+			series: Session.get("data")
+		}
+	}
+});
+
+
+Template.invest.events({
+	'change .investmentTypesCheckbox':function(event) {		
+		var inputs = document.getElementsByTagName("INPUT");
+	
+		var finalData = [];
+		for(var i = 0; i < inputs.length; i++) {
+			if(inputs[i].type === 'checkbox' && inputs[i].checked) {
+				var data = [];
+				data[0] = investmentTypes[i].fluidity;
+				data[1] = investmentTypes[i].security;
+				data[2] = investmentTypes[i].rateOfReturn;
+				data[3] = investmentTypes[i].accessiblity;
+				data[4] = investmentTypes[i].manageability;
+
+				var object = {
+					name: investmentTypes[i].name,
+					data: data,
+					pointPlacement: 'on'
+				}
+				
+				finalData.push(object);	
+			}
+		}
+		
+		Session.set("data", finalData);
+	}
+});
 
 Template.invest.helpers({
 	investmentTypes: function() {

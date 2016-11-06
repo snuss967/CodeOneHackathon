@@ -13,6 +13,12 @@ ProfileSchema = new SimpleSchema({
 		type: [InvestmentSchema],
 		label: "Investments",
 		optional: true
+	},
+	balance: {
+		type: Number,
+		label: "Balance",
+		optional: false,
+		decimal: true
 	}
 });
 

@@ -4,10 +4,11 @@ import { Profiles } from '../collections/profiles.js';
 
 export function profilesMethods() {
 	Meteor.methods({
-		'createProfile':function(name, investments) {
+		'createProfile':function(name, investments, balance) {
 			var profileObject = {
 				name: name,
-				investments: investments
+				investments: investments,
+				balance: balance
 			}
 			
 			Profiles.insert(profileObject);
@@ -15,11 +16,12 @@ export function profilesMethods() {
 		'removeProfile':function(profileId) {
 			Profiles.remove(profileId);
 		}, 
-		'updateProfile':function(profileId, name, investments) {
+		'updateProfile':function(profileId, name, investments, balance) {
 			Profiles.update({_id: profileId}, {
 				$set: {
 					name: name,
-					investments: investments
+					investments: investments,
+					balance: balance
 				}
 			});
 		}

@@ -61,10 +61,12 @@ Meteor.startup(() => {
 		});
 
 		var investments = Investments.find({}).fetch();
+		var balance = 25304.75;
 		
 		Profiles.insert({
 			name: "Matthew",
-			investments: investments
+			investments: investments,
+			balance: balance
 		});
 	}
 	

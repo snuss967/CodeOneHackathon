@@ -5,7 +5,19 @@
 		<link rel="stylesheet" href="../css/invest.css">
 	</head>
 	<body>	
-	<div class="investment_header_text"><div id="left_side">Acct Balance</div> <div id="right_side">Rate of Return</div></div>	
+	
+	 <div class="selectStudents">
+        <p class="noIndent">Groups:</p>
+        {{#each investmentTypes}}
+            <label for="{{groupId}}"><input type="checkbox" class="groupCheckBox" id="{{groupId}}"/> {{name}}</label>
+        {{/each}}
+      </div>
+	
+	<div class="investment_header_text">
+		<div id="left_side">Acct Balance</div> 
+		<div id="right_side">Rate of Return</div>
+	</div>	
+	
 	<select class="investment_selector">
 	  <option value="Money_Market">Money Markets</option>
 	  <option value="Savings_Account">Savings Account</option>

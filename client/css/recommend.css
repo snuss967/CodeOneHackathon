@@ -27,8 +27,8 @@ body {
 .savings-num, .years-num {
 	outline: none;
 	border: none;
-	background: transparent;
-	width: 96px;
+	background: white;
+	width: 108px;
 	font-size: 32px;
 }
 
@@ -93,6 +93,10 @@ body {
 	}
 }
 
+@media (max-width: 1450px) {
+
+}
+
 @media (max-width: 1000px) {
 	.recommend-title {
 		top: 116px;
@@ -148,40 +152,40 @@ body {
 .results {
 	position: absolute;
 	text-align: left;
-	margin-left: 40px;
-	height: 25px;
-	width: 100%;
-
-}
-
-#resultsHeader {
-	font-family: 'Montserrat';
-	top: 460px;
-	font-size: 40px;
-}
-#resultsSubtext {
-	font-family: 'Montserrat';
-	font-size: 30px;
-	top: 530px;
-}
-
-.chart-recommend {
-	position: absolute;
-	left: -25%;
-	width: 49%;
-	height: 500px;
-	display: inline-block;
-}
-.charts-container-recommend {
-	position: absolute;
-	height: 500px;
-	width: 40%;
 	top: 450px;
-	left: 65%;
+	left: 50%;
 	margin-right: -50%;
 	transform: translateX(-50%);
+	height: 500px;
+	width: 80%;
+	margin-bottom: 64px;
+	padding: 4px;
+	font-family: 'Montserrat';
+}
+
+.results p {
+	float: left;
+}
+
+.chart-container {
+	position: relative;
+	float: right;
+	height: 300px;
+	width: 450px;
 	background-color: white;
 	box-shadow: 0 0 32px 0 rgba(0, 0, 0, 0.7);
+}
+
+.chart {
+	position: absolute;
+	margin: 16px 0 0 56px;
+	height: 100%;
+	width: 100%;
+	left: 50%;
+	top: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	display: inline-block;
 }
 
 input[type=range] {

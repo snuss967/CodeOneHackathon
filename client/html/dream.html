@@ -5,13 +5,21 @@
 	<body>
 		<div class="full-page-splash"></div>
 		<div class="dream-title">Dream Big</div>
+<<<<<<< HEAD
 		<center class="dream-subtitle">What Is Something You Have Always Wanted?</center>
+=======
+		<!-- Can We Change Our How Much Money to a Numbers only input of some sort-->
+		<center class="dream-subtitle">What Is Something You Have Always Wanted?</center> 
+>>>>>>> 5f1257813ff0eee631ef11b7ebdfb00f13226dda
 		<div class="what-title">What?</div>
-		<input type="text" class="what-text" name="what_text">
-		<div class="howMuch-title">How Much?</div>
-		<input type="text" name="how_much_text" class="howMuch-text">
-		<img src="../html/chevron-arrow-down.svg" alt="chevron-arrow-down" class="chevron-arrow-down">
+		<input type="text" class="what-text" name="what-text">
+		<div class="howMuch-title">How Much($)?</div>
+		<input type="text" name="how-much-text" class="howMuch-text">
+		<!-- Would Be Sweet to have a portion on here that we click on the chevron and it scrolls us down. Was tryting to do that wasnt working super well-->
+		<a href="http://localhost:3000/dream#bottomPoint" class="chevron-wrapper-down"><img src="http://www.clarkassociatesinc.biz/derby/images/chevron-down.svg" class= "chevron-arrow-down" id="chevronScroll" alt="chevron-arrow-down"></a>
+		<a id="bottomPoint">       </a>
 		<div class="getThere-title">Now Let Us Help You Get There</div>
+<<<<<<< HEAD
 		<div class="savings-title" style="top:1200px">Savings: $<input type="number" class="savings-num" min="0" max="10000"> per week</div>
 		<label class='savings-min'>0</label>
 		<input type="range" class="savings" style="top:1275px" value="0" min="0" max="10000">
@@ -20,5 +28,15 @@
 		<div class="our-paragraph-style"> Carried nothing on am warrant towards.</div>
 
 		<script type="text/javascript" src="../js/recommend.js"></script>
+=======
+		<div class="savings-title" style="top:1200px">Savings: $<input type="number" class="savings-num" min="0" max="1000"> per week</div>
+		<input type="range" class="savings" style="top:1275px" value="0" min="0" max="1000">
+		<div class="saveWeek-subtitle">How Much Can You Save Per Week?</div> 
+		<div class='savings-chart-container'>
+			<div id="recommendedSavingsChart" class="savings-chart"></div>
+		</div>
+		<!-- Would Like to have a text box underneath this chart that I could populate with data-->
+		<script type="text/javascript" src="../js/dream.js"></script>
+>>>>>>> 5f1257813ff0eee631ef11b7ebdfb00f13226dda
 	</body>
 </template>

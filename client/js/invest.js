@@ -1,3 +1,5 @@
+import { Session } from 'meteor/session';
+
 const investmentTypes = [
 {
 	name: "Money Markets",
@@ -11,7 +13,7 @@ const investmentTypes = [
 	manageability: 4.9
 },
 {
-	name: "Individual Retirement Account, Traditional and Roth (IRA)",
+	name: "Individual Retirement Account",
 	id: "ira",
 	description: "An Individual Retirement Account IRA is a Government protected tax free retirement account in which one can place $5,500 of their yearly income tax free those 	50 and over can contribute $6,500 per year. They come in a few forms including: The traditional where you pay taxes on your money when you receive it at Retirement and the Roth where you pay taxes on your money when you place it in your account. IRAs are great for those looking for a retirement account if they do not have a 401K or if they have already maxed out their 401K.",
 	averageRateOfReturn: 0.075,
@@ -33,7 +35,7 @@ const investmentTypes = [
 	manageability: 4.5
 },
 {
-	name: "High Risk (Aggressive Growth) Mutual Funds",
+	name: "Aggressive Growth Mutual Funds",
 	id: "highRiskMutualFunds",
 	description: "A mutual fund is a collection of stocks that are managed and are owned by a collection of people. High risk mutual funds are funds that will generate return rates that are usually higher than a low or moderate risk mutual fund but run the risk one will lose a significant amount of money in the account. These funds are taxed and may or may not charge commission, most usually charge management fees on both the initial principle as well as the returns that the fund yields. High risk mutual funds are a good option for those looking for a long term investment vehicle.",
 	averageRateOfReturn: 0.1,
@@ -77,7 +79,7 @@ const investmentTypes = [
 	manageability: 4.0
 },
 {
-	name: "Stocks, Small Company (Small Cap)",
+	name: "Stocks, Small Company",
 	id: "stocksSmallCompanySmallCap",
 	description: "Small Company stocks are stocks that have relatively low market caps usually less than 2 Billion USD. Small Cap stocks are generally more capable of generating high rates of return but are also more open to risk than larger cap stocks. They have historically outperformed large cap stocks, however, this is a vanity metric that varies greatly depending on the time period.",
 	averageRateOfReturn: 0.12,
@@ -430,6 +432,107 @@ const investmentTypes = [
 	manageability: 4.8
 }
 ];
+
+Template.invest.onCreated(function() {
+	Session.set("data", [1.2, 3.4, 4.5, 2.1, 2.2]);
+});
+
+Template.invest.helpers({
+	comparisonRadarGraph: function() {
+		return {
+			chart: {
+				polar: true,
+				type: 'area'
+			},
+			
+			plotOptions: {
+				series: {
+					animation: false
+				}
+			},
+
+			title: {
+				text: 'Investment Comparison',
+				x: -80
+			},
+
+			pane: {
+				size: '80%'
+			},
+
+			xAxis: {
+				categories: ['Fluidity', 'Security', 'Rate Of Return', 'Accessiblity', 'Manageability'],
+				tickmarkPlacement: 'on',
+				lineWidth: 0
+			},
+
+			yAxis: {
+				gridLineInterpolation: 'polygon',
+				lineWidth: 0,
+				min: 0
+			},
+
+			tooltip: {
+				shared: true,
+			},
+			
+			credits: {
+				enabled: false
+			},
+
+			legend: {
+				align: 'right',
+				verticalAlign: 'top',
+				y: 70,
+				layout: 'vertical'
+			},
+						
+			series: Session.get("data")
+		}
+	}
+});
+
+
+Template.invest.events({
+	'change .investmentTypesCheckbox':function(event) {		
+		var inputs = document.getElementsByTagName("INPUT");
+		var finalData = [];
+		var numberChecked = 0;
+		var indexChecked = 0;
+		for(var i = 0; i < inputs.length; i++) {
+			if(inputs[i].type === 'checkbox' && inputs[i].checked) {
+				var data = [];
+				data[0] = investmentTypes[i].fluidity;
+				data[1] = investmentTypes[i].security;
+				data[2] = investmentTypes[i].rateOfReturn;
+				data[3] = investmentTypes[i].accessiblity;
+				data[4] = investmentTypes[i].manageability;
+				numberChecked++;
+				indexChecked = i;
+				var object = {
+					name: investmentTypes[i].name,
+					data: data,
+					pointPlacement: 'on'
+				}
+				
+				finalData.push(object);	
+			}
+		}
+		if(numberChecked == 1)
+		{
+			$('#explanationToChangeInvest').html(investmentTypes[indexChecked].description);
+			//fill the text with information on the one investment
+		}
+		else
+		{
+			$('#explanationToChangeInvest').html("");
+			//set the text null
+		}
+
+		
+		Session.set("data", finalData);
+	}
+});
 
 Template.invest.helpers({
 	investmentTypes: function() {

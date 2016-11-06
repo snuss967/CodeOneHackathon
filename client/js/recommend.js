@@ -116,7 +116,6 @@ var generateRecommendedInvestmentChartData = function() {
 	var annualAddition = parseInt($('.savings-num').val());
 	var p = annualAddition;
 
-	//TODO CHANGE ONCE SPENCER GETS THE CONDITIONALS DONE
 	var r = getCompoundInterestAndSetMessage(numberOfYears, annualAddition);
 
 	//The compounded interests from year 0 to year [numberOfYears]

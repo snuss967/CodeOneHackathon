@@ -18,7 +18,7 @@ html, body {
    position: absolute;
    top: 128px;
    font-size: 96px;
-   left: 48%;
+   left: 50%;	
    font-family: "DecourW00-Black";
    -webkit-transform: translateX(-50%);
 		   transform: translateX(-50%);
@@ -35,7 +35,7 @@ html, body {
 
 .dream-subtitle {
    position: absolute;
-   left: 15%;
+   left: 18%;
    font-size: 2.5em;
    font-family: 'Montserrat';
    top: 250px;
@@ -52,10 +52,20 @@ html, body {
 
 .chevron-arrow-down {
    position: absolute;
-   left: 42%;
+   font-size: 32px;
+   font-family: 'Montserrat';
+   width: 75px;
+   height: 75px;
+}
+
+.chevron-wrapper-down {
+   position: absolute;
+   left: 46.5%;
    font-size: 32px;
    font-family: 'Montserrat';
    top:  700px;
+   width: 75px;
+   height: 75px;
 }
 
 .howMuch-title {
@@ -67,21 +77,21 @@ html, body {
 }
 .what-title {
    position: absolute;
-   left: 45%;
+   left: 46%;
    font-size: 32px;
    font-family: 'Montserrat';
    top: 370px;
 }
 .howMuch-text {
    position: absolute;
-   left: 35%;
+   left: 36.5%;
    font-size: 32px;
    font-family: 'Montserrat';
    top: 425px;
 }
 .what-text {
    position: absolute;
-   left: 35%;
+   left: 36.5%;
    font-size: 32px;
    font-family: 'Montserrat';
    top: 320px;
@@ -93,3 +103,37 @@ html, body {
    font-size: 20px;
    top: 1400px;
 }
+<<<<<<< HEAD
+=======
+.savings-chart-container {
+   position: absolute;
+   right: 375px;
+   top: 1350px;
+   height: 550px;
+   width: 700px;
+   background-color: white;
+   box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
+   margin-bottom: 64px;
+}
+
+.savings-chart {
+   position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    margin-right: -50%;
+    -webkit-transform: translate(-50%, -50%);
+         transform: translate(-50%, -50%);
+}
+.feedbackText
+{
+   font-family: 'Montserrat';
+   font-size: 20px;
+   position: absolute;
+   left: 15%
+   top: 1600px;
+   width: 70%;
+}
+
+>>>>>>> 5f1257813ff0eee631ef11b7ebdfb00f13226dda

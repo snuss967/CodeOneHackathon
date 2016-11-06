@@ -13,7 +13,7 @@ const investmentTypes = [
 	manageability: 4.9
 },
 {
-	name: "Individual Retirement Account, Traditional and Roth (IRA)",
+	name: "Individual Retirement Account",
 	id: "ira",
 	description: "An Individual Retirement Account IRA is a Government protected tax free retirement account in which one can place $5,500 of their yearly income tax free those 	50 and over can contribute $6,500 per year. They come in a few forms including: The traditional where you pay taxes on your money when you receive it at Retirement and the Roth where you pay taxes on your money when you place it in your account. IRAs are great for those looking for a retirement account if they do not have a 401K or if they have already maxed out their 401K.",
 	averageRateOfReturn: 0.075,
@@ -35,7 +35,7 @@ const investmentTypes = [
 	manageability: 4.5
 },
 {
-	name: "High Risk (Aggressive Growth) Mutual Funds",
+	name: "Aggressive Growth Mutual Funds",
 	id: "highRiskMutualFunds",
 	description: "A mutual fund is a collection of stocks that are managed and are owned by a collection of people. High risk mutual funds are funds that will generate return rates that are usually higher than a low or moderate risk mutual fund but run the risk one will lose a significant amount of money in the account. These funds are taxed and may or may not charge commission, most usually charge management fees on both the initial principle as well as the returns that the fund yields. High risk mutual funds are a good option for those looking for a long term investment vehicle.",
 	averageRateOfReturn: 0.1,
@@ -79,7 +79,7 @@ const investmentTypes = [
 	manageability: 4.0
 },
 {
-	name: "Stocks, Small Company (Small Cap)",
+	name: "Stocks, Small Company",
 	id: "stocksSmallCompanySmallCap",
 	description: "Small Company stocks are stocks that have relatively low market caps usually less than 2 Billion USD. Small Cap stocks are generally more capable of generating high rates of return but are also more open to risk than larger cap stocks. They have historically outperformed large cap stocks, however, this is a vanity metric that varies greatly depending on the time period.",
 	averageRateOfReturn: 0.12,
@@ -470,7 +470,8 @@ Template.invest.helpers({
 			yAxis: {
 				gridLineInterpolation: 'polygon',
 				lineWidth: 0,
-				min: 0
+				min: 0,
+				max: 5.0
 			},
 
 			tooltip: {
@@ -497,14 +498,14 @@ Template.invest.helpers({
 Template.invest.events({
 	'change .investmentTypesCheckbox':function(event) {		
 		var inputs = document.getElementsByTagName("INPUT");
-	
+		
 		var finalData = [];
 		var selected = [];
 		for(var i = 0; i < inputs.length; i++) {
 			if(inputs[i].type === 'checkbox' && inputs[i].checked) {
 				selected.push({
 					name: investmentTypes[i].name,
-					averageRateOfReturn: investmentTypes[i].averageRateOfReturn * 100,
+					averageRateOfReturn: (investmentTypes[i].averageRateOfReturn * 100).toFixed(2),
 					description: investmentTypes[i].description
 				});
 				

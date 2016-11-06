@@ -41,7 +41,7 @@ var getInterestRateInvestmentMethod = function (numberOfYears, weeklyAddition)
 	}
 	else if(numberOfYears < 3 && weeklyAddition > 50)
 	{
-		//check out a CD 
+		//check out a CD
 		return 0.0155;
 	}
 	else if(numberOfYears < 5 && weeklyAddition > 30)
@@ -106,8 +106,8 @@ var generateResponseText = function(lengthOfTimeNoInvestment, lengthOfTimeInvest
 	{
 		var text = "In order to help you accomplish your goal of " + goal + " we invested your money in a First National Bank " + getInvestmentType(interestRate) + " which allowed you to earn enough money to accomplish your goal in " + lengthOfTimeInvestment + " by using compound interest. If you would have just saved your money without taking any risk and reaping any reward it would have taken you " + lengthOfTimeNoInvestment + " in order to achieve the same goals. Contact First National today to learn how they can help you in achieving your goals and creating unforgettable firsts. Let us join you!";
 		return text;
-	} 
-	else 
+	}
+	else
 	{
 		var text = "By putting your money for " + lengthOfTimeNoInvestment + " in a First National Bank Savings Account you can easily achieve your goal of " + goal + ". As you go through and life and have even bigger goals then your current please use the calculator again to see the power of compound interest and how First National Bank can use it to help you accomplish your goals sooner."
 		return text;
@@ -177,4 +177,5 @@ $(document).ready(function() {
 			$('.dream-savings-num').val($(this).val());
 			drawCharts();
 		});
-})});
+	}, 50);
+});

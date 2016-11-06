@@ -117,6 +117,9 @@ var generateRecommendedInvestmentChartData = function() {
 	var p = annualAddition;
 
 	var r = getCompoundInterestAndSetMessage(numberOfYears, annualAddition);
+	console.log("NUMBER OF YEARS: " + numberOfYears);
+	console.log("ANNUAL ADDITION: " + annualAddition);
+	console.log("RETURN RATE: " + r);
 
 	//The compounded interests from year 0 to year [numberOfYears]
 	var compoundedInterest = new google.visualization.DataTable();

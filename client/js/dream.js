@@ -116,8 +116,8 @@ var generateResponseText = function(lengthOfTimeNoInvestment, lengthOfTimeInvest
 
 //Generates the data by using the compound interested with additions formula
 var generateRecommendedSavingsChartData = function() {
-	var totalCostOfActivity  = parseInt($('.price').val());
-	var nameOfActivity= $('.dream').val();
+	var totalCostOfActivity  = parseInt($('.howMuch-text').val());
+	var nameOfActivity= $('.what-text').val();
 	var weeklyAddition = parseInt($('.dream-savings-num').val());
 	var annualAddition = weeklyAddition * 52;
 	var numberOfWeeks = (totalCostOfActivity/weeklyAddition);
@@ -173,8 +173,8 @@ var generateRecommendedSavingsChartData = function() {
 
 $(document).ready(function() {
 	setTimeout(function() {
-		$('.savings').change(function() {
-			$('.savings-num').val($(this).val());
+		$('.dream-savings').change(function() {
+			$('.dream-savings-num').val($(this).val());
 			drawCharts();
 		});
 	}, 50);

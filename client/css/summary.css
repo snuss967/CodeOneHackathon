@@ -69,10 +69,14 @@ body {
 
 .total-value {
 	left: 21%;
+	border: none;
+    outline:none;
 }
 
 .change {
 	right: 21%;
+	border: none;
+    outline:none;
 }
 
 .charts-container {

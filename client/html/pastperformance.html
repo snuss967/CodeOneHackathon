@@ -3,14 +3,498 @@
 		<title>Past Performance</title>
 	</head>
 	<body>
-		<div class="title">Previous Day's Profits and Losses</div>
-		<div class="total-value">Net Worth: <b>${{totalValue}}</b></div>
-		<div class="change">Today's Change: <b>{{todaysChange}}%</b></div>
-
-		<div class="charts-container">
-			<div id="investmentSummaryPieChart" class="summary-chart"></div>
-			<div id="investmentChangeLineChart" class="summary-chart"></div>
+		<div class="pastperformance_title">Previous Performance</div>
+		<div class="profitandlosstable-container">
+		<table style="width:90%">
+		  <tr>
+		    <th class="header">Date</th>
+		    <th class="header">Investment</th> 
+		    <th class="header">Total Value</th>
+		    <th class="header">Profit/Loss</th>
+		  </tr>
+		  <tr>
+		    <td class="listing">Nov 4 2016</td>
+		    <td class="listing">Three Year CD</td> 
+		    <td class="listing">50</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Nov 4 2016</td>
+		    <td class="listing">5 Year CD</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Nov 4 2016</td>
+		    <td class="listing">2 Year CD</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_loss">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Nov 4 2016</td>
+		    <td class="listing">S&amp;P 500 Index</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Nov 4 2016</td>
+		    <td class="listing">VTSAX</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_loss">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Nov 4 2016</td>
+		    <td class="listing">TVFWAX</td> 
+		    <td class="listing">50</td>
+		    <td class="listing_loss">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Nov 4 2016</td>
+		    <td class="listing">VEMAX</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Nov 4 2016</td>
+		    <td class="listing">3 Year US GOV</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_loss">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Nov 4 2016</td>
+		    <td class="listing">5 Year OPPD</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Nov 4 2016</td>
+		    <td class="listing">MSFT Debt Financing</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Nov 3 2016</td>
+		    <td class="listing">Three Year CD</td> 
+		    <td class="listing">50</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Nov 3 2016</td>
+		    <td class="listing">5 Year CD</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Nov 3 2016</td>
+		    <td class="listing">2 Year CD</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_loss">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Nov 3 2016</td>
+		    <td class="listing">S&amp;P 500 Index</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Nov 3 2016</td>
+		    <td class="listing">VTSAX</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_loss">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Nov 3 2016</td>
+		    <td class="listing">TVFWAX</td> 
+		    <td class="listing">50</td>
+		    <td class="listing_loss">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Nov 3 2016</td>
+		    <td class="listing">VEMAX</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Nov 3 2016</td>
+		    <td class="listing">3 Year US GOV</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_loss">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Nov 3 2016</td>
+		    <td class="listing">5 Year OPPD</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Nov 3 2016</td>
+		    <td class="listing">MSFT Debt Financing</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Nov 2 2016</td>
+		    <td class="listing">Three Year CD</td> 
+		    <td class="listing">50</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Nov 2 2016</td>
+		    <td class="listing">5 Year CD</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Nov 2 2016</td>
+		    <td class="listing">2 Year CD</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_loss">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Nov 2 2016</td>
+		    <td class="listing">S&amp;P 500 Index</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Nov 2 2016</td>
+		    <td class="listing">VTSAX</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_loss">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Nov 2 2016</td>
+		    <td class="listing">TVFWAX</td> 
+		    <td class="listing">50</td>
+		    <td class="listing_loss">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Nov 2 2016</td>
+		    <td class="listing">VEMAX</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Nov 2 2016</td>
+		    <td class="listing">3 Year US GOV</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_loss">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Nov 2 2016</td>
+		    <td class="listing">5 Year OPPD</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Nov 2 2016</td>
+		    <td class="listing">MSFT Debt Financing</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_profit">50</td>
+		   </tr>
+		  <tr>
+		    <td class="listing">Nov 1 2016</td>
+		    <td class="listing">Three Year CD</td> 
+		    <td class="listing">50</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Nov 1 2016</td>
+		    <td class="listing">5 Year CD</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Nov 1 2016</td>
+		    <td class="listing">2 Year CD</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_loss">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Nov 1 2016</td>
+		    <td class="listing">S&amp;P 500 Index</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Nov 1 2016</td>
+		    <td class="listing">VTSAX</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_loss">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Nov 1 2016</td>
+		    <td class="listing">TVFWAX</td> 
+		    <td class="listing">50</td>
+		    <td class="listing_loss">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Nov 1 2016</td>
+		    <td class="listing">VEMAX</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Nov 1 2016</td>
+		    <td class="listing">3 Year US GOV</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_loss">50</td>
+		  </tr>
+		   <tr>
+		    <td class="listing">Nov 1 2016</td>
+		    <td class="listing">5 Year OPPD</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Nov 1 2016</td>
+		    <td class="listing">MSFT Debt Financing</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_profit">50</td>
+		   </tr>
+		   <tr>
+		    <td class="listing">Oct 31 2016</td>
+		    <td class="listing">Three Year CD</td> 
+		    <td class="listing">50</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Oct 31 2016</td>
+		    <td class="listing">5 Year CD</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Oct 31 2016</td>
+		    <td class="listing">2 Year CD</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_loss">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Oct 31 2016</td>
+		    <td class="listing">S&amp;P 500 Index</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Oct 31 2016</td>
+		    <td class="listing">VTSAX</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_loss">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Oct 31 2016</td>
+		    <td class="listing">TVFWAX</td> 
+		    <td class="listing">50</td>
+		    <td class="listing_loss">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Oct 31 2016</td>
+		    <td class="listing">VEMAX</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Oct 31 2016</td>
+		    <td class="listing">3 Year US GOV</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_loss">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Oct 31 2016</td>
+		    <td class="listing">5 Year OPPD</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Oct 31 2016</td>
+		    <td class="listing">MSFT Debt Financing</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Oct 28 2016</td>
+		    <td class="listing">Three Year CD</td> 
+		    <td class="listing">50</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Oct 28 2016</td>
+		    <td class="listing">5 Year CD</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Oct 28 2016</td>
+		    <td class="listing">2 Year CD</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_loss">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Oct 28 2016</td>
+		    <td class="listing">S&amp;P 500 Index</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Oct 28 2016</td>
+		    <td class="listing">VTSAX</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_loss">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Oct 28 2016</td>
+		    <td class="listing">TVFWAX</td> 
+		    <td class="listing">50</td>
+		    <td class="listing_loss">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Oct 28 2016</td>
+		    <td class="listing">VEMAX</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Oct 28 2016</td>
+		    <td class="listing">3 Year US GOV</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_loss">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Oct 28 2016</td>
+		    <td class="listing">5 Year OPPD</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Oct 28 2016</td>
+		    <td class="listing">MSFT Debt Financing</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Oct 27 2016</td>
+		    <td class="listing">Three Year CD</td> 
+		    <td class="listing">50</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Oct 27 2016</td>
+		    <td class="listing">5 Year CD</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Oct 27 2016</td>
+		    <td class="listing">2 Year CD</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_loss">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Oct 27 2016</td>
+		    <td class="listing">S&amp;P 500 Index</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Oct 27 2016</td>
+		    <td class="listing">VTSAX</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_loss">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Oct 27 2016</td>
+		    <td class="listing">TVFWAX</td> 
+		    <td class="listing">50</td>
+		    <td class="listing_loss">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Oct 27 2016</td>
+		    <td class="listing">VEMAX</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Oct 27 2016</td>
+		    <td class="listing">3 Year US GOV</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_loss">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Oct 27 2016</td>
+		    <td class="listing">5 Year OPPD</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Oct 27 2016</td>
+		    <td class="listing">MSFT Debt Financing</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_profit">50</td>
+		   </tr>
+		  <tr>
+		    <td class="listing">Oct 26 2016</td>
+		    <td class="listing">Three Year CD</td> 
+		    <td class="listing">50</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Oct 26 2016</td>
+		    <td class="listing">5 Year CD</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Oct 26 2016</td>
+		    <td class="listing">2 Year CD</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_loss">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Oct 26 2016</td>
+		    <td class="listing">S&amp;P 500 Index</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Oct 26 2016</td>
+		    <td class="listing">VTSAX</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_loss">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Oct 26 2016</td>
+		    <td class="listing">TVFWAX</td> 
+		    <td class="listing">50</td>
+		    <td class="listing_loss">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Oct 26 2016</td>
+		    <td class="listing">VEMAX</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Oct 26 2016</td>
+		    <td class="listing">3 Year US GOV</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_loss">50</td>
+		  </tr>
+		   <tr>
+		    <td class="listing">Oct 26 2016</td>
+		    <td class="listing">5 Year OPPD</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_profit">50</td>
+		  </tr>
+		  <tr>
+		    <td class="listing">Oct 26 2016</td>
+		    <td class="listing">MSFT Debt Financing</td> 
+		    <td class="listing">94</td>
+		    <td class="listing_profit">50</td>
+		   </tr>
+		</table>
 		</div>
+
 
 		<script type="text/javascript" src="../js/summary.js"></script>
 	</body>

@@ -4,8 +4,8 @@
 	</head>
 	<body>
 		<div class="title">Financial Summary</div>
-		<button class="total-value" onclick="window.location = '/summary/pastperformance'">Net Worth: <b>${{totalValue}}</b></button>
-		<button class="change" onclick="window.location = '/summary/breakdown'">Today's Change: <b>{{todaysChange}}%</b></button>
+		<div class="total-value" onclick="window.location = '/summary/pastperformance'">Net Worth: <b>${{totalValue}}</b></div>
+		<div class="change" onclick="window.location = '/summary/breakdown'">Today's Change: <b>{{todaysChange}}%</b></div>
 
 		<div class="charts-container">
 			<div id="investmentSummaryPieChart" class="summary-chart"></div>

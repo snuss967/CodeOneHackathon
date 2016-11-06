@@ -67,13 +67,13 @@ var getCompoundInterestAndSetMessage = function(numberOfYears, annualAddition) {
 	{
 		$('.advice-content').html("A mutual fund is a collection of stocks that are managed and are owned by a collection of people. Moderate risk mutual funds are funds that will generate return rates that are usually higher than a low risk mutual fund, but lower than a high risk mutual fund. They run the risk of losing money but not as great as a High Risk mutual fund. These funds are taxed and may or may not charge commission, most usually charge management fees on both the initial principle as well as the returns that the fund yields.");
 		$('.plan').html("A Mutual Fund");
-		return 0.96;
+		return 0.096;
 	}
 	else if((numberOfYears <= 25 && numberOfYears >= 15) && (annualAddition >= 2000))
 	{
 		$('.advice-content').html("A mutual fund is a collection of stocks that are managed and are owned by a collection of people. High risk mutual funds are funds that will generate return rates that are usually higher than a low or moderate risk mutual fund but run the risk one will lose a significant amount of money in the account. Combined with stocks peered for growth with a little more risk this will return dividends.");
 		$('.plan').html("A Mutual Fund");
-		return 0.95;
+		return 0.095;
 	}
 	else if((numberOfYears >= 25) && (annualAddition <= 7000 && annualAddition >= 4500))
 	{
